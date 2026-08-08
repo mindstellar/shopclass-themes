@@ -3,3 +3,8 @@ Thumbs.db
 *.log
 node_modules/
 .env
+
+# Local output from tools/*.sh — fetched/generated per run, never committed.
+/package-ci/
+/validation-out/
+/results/

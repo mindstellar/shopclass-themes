@@ -1,10 +1,12 @@
 # Contributing a theme
 
 > [!IMPORTANT]
-> **This registry is not yet accepting submissions.** Everything below describes the
-> intended workflow. The piece that actually gates a submission — automated PR
-> validation — is not built, so a PR opened today has no CI to check it and will not be
-> merged. This document will drop the notice once validation ships.
+> **This registry is not yet accepting submissions.** Pull-request validation runs, but there is no
+> catalog and no release automation yet (`docs/MARKET.md` Phases 4 and 7 in the core repository), so
+> a merged package still cannot be published or installed by anyone. Validation also expects a
+> Shopclass release carrying the shared validator; until one exists, a run builds it from core's
+> source instead. The most useful contribution today is an issue rather than a pull request — see
+> `.github/ISSUE_TEMPLATE/`.
 
 The full package contract — header fields, versioning, artwork, security requirements — is
 specified in `docs/PACKAGE-SPEC.md` in the

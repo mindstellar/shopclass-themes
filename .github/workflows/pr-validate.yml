@@ -1,0 +1,213 @@
+name: PR validation
+
+# pull_request, never pull_request_target: a contributor's manifest or theme
+# source must never see repository secrets or a token with write access to
+# this repo. See docs/MARKET.md §6/§9 in mindstellar/shopclass.
+on:
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: pr-${{ github.event.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  # What changed: external/<slug>.json registrations and themes/<slug>/
+  # source are validated separately (they're different jobs entirely), and a
+  # PR touching neither produces two empty matrices, not a skipped workflow.
+  changed:
+    name: Detect changed packages
+    runs-on: ubuntu-latest
+    outputs:
+      external: ${{ steps.detect.outputs.external }}
+      themes: ${{ steps.detect.outputs.themes }}
+      any: ${{ steps.detect.outputs.any }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - id: detect
+        run: tools/changed-packages.sh "origin/${{ github.base_ref }}"
+
+  # The shared validator core publishes (docs/MARKET.md §6.4) — fetched once
+  # and shared with every matrix leg below, rather than re-fetched per slug.
+  fetch-ci:
+    name: Fetch package-ci toolkit
+    needs: changed
+    if: needs.changed.outputs.any == 'true'
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+      - run: tools/fetch-package-ci.sh package-ci
+      - uses: actions/upload-artifact@v4
+        with:
+          name: package-ci
+          path: package-ci
+          retention-days: 3
+
+  # external/<slug>.json — the dominant PR here. Manifest-level findings
+  # block; findings about the release artifact itself only warn (see
+  # tools/validate-external.sh's header for the reasoning).
+  validate-external:
+    name: External — ${{ matrix.slug }}
+    needs: [changed, fetch-ci]
+    if: needs.changed.outputs.external != '[]'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        slug: ${{ fromJSON(needs.changed.outputs.external) }}
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+      - uses: actions/download-artifact@v4
+        with:
+          name: package-ci
+          path: package-ci
+      - name: Validate
+        id: validate
+        run: |
+          tools/validate-external.sh "${{ matrix.slug }}" package-ci "validation-out/external-${{ matrix.slug }}" || true
+      - name: Annotate + render comment fragment
+        run: |
+          mkdir -p results
+          tools/annotate-result.sh "${{ matrix.slug }}" \
+            "validation-out/external-${{ matrix.slug }}" package-ci \
+            "results/external-${{ matrix.slug }}.md"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: result-external-${{ matrix.slug }}
+          path: results/external-${{ matrix.slug }}.md
+          retention-days: 14
+
+  # themes/<slug>/ — the exception path (README.md). Full source is in the
+  # PR, so every finding here is blocking, matching PACKAGE-SPEC §8.
+  validate-theme:
+    name: Theme — ${{ matrix.slug }}
+    needs: [changed, fetch-ci]
+    if: needs.changed.outputs.themes != '[]'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        slug: ${{ fromJSON(needs.changed.outputs.themes) }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+      - uses: actions/download-artifact@v4
+        with:
+          name: package-ci
+          path: package-ci
+      - name: Validate
+        run: |
+          tools/validate-theme.sh "${{ matrix.slug }}" package-ci "validation-out/theme-${{ matrix.slug }}" || true
+      - name: Annotate + render comment fragment
+        run: |
+          mkdir -p results
+          tools/annotate-result.sh "${{ matrix.slug }}" \
+            "validation-out/theme-${{ matrix.slug }}" package-ci \
+            "results/theme-${{ matrix.slug }}.md"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: result-theme-${{ matrix.slug }}
+          path: results/theme-${{ matrix.slug }}.md
+          retention-days: 14
+
+  # One required check to point branch protection at — a matrix job's own
+  # conclusion is already "failure" if any leg failed (fail-fast: false just
+  # stops it short-circuiting the others), so this only has to roll the
+  # upstream jobs up and treat "skipped" (nothing of that kind changed) as
+  # passing.
+  status:
+    name: PR validation
+    needs: [changed, fetch-ci, validate-external, validate-theme]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check upstream job results
+        run: |
+          fail=false
+          for result in \
+            "changed:${{ needs.changed.result }}" \
+            "fetch-ci:${{ needs.fetch-ci.result }}" \
+            "validate-external:${{ needs.validate-external.result }}" \
+            "validate-theme:${{ needs.validate-theme.result }}"; do
+            name="${result%%:*}"
+            status="${result#*:}"
+            echo "${name}: ${status}"
+            if [[ "${status}" == "failure" || "${status}" == "cancelled" ]]; then
+              fail=true
+            fi
+          done
+          if [[ "${fail}" == "true" ]]; then
+            echo "One or more validation jobs failed."
+            exit 1
+          fi
+          echo "All good."
+
+  # A single sticky comment, updated in place via a hidden marker — never a
+  # new comment per push. Always runs (even on failure) so the comment shows
+  # what broke, and always posts something even with zero package changes.
+  comment:
+    name: Sticky comment
+    needs: [changed, validate-external, validate-theme]
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+      - uses: actions/download-artifact@v4
+        if: needs.changed.outputs.any == 'true'
+        with:
+          pattern: result-*
+          path: results
+          merge-multiple: true
+        continue-on-error: true
+      - name: Build comment body
+        run: |
+          mkdir -p results
+          tools/build-sticky-comment.sh results "${{ needs.changed.outputs.any }}" > comment-body.md
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const body = fs.readFileSync('comment-body.md', 'utf8');
+            const marker = '<!-- shopclass-themes:pr-validate -->';
+            const { owner, repo } = context.repo;
+            const issue_number = context.issue.number;
+
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner, repo, issue_number, per_page: 100,
+            });
+            const existing = comments.find((c) => c.body && c.body.includes(marker));
+
+            if (existing) {
+              await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body });
+            } else {
+              await github.rest.issues.createComment({ owner, repo, issue_number, body });
+            }
