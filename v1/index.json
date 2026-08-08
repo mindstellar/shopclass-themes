@@ -4,6 +4,7 @@
         "categories": [
             "general"
         ],
+        "downloads": 557,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-bender/master/screenshot.png",
         "name": "bender",
         "short_description": "The legacy default Shopclass theme, replaced by Storefront in 6.0.0. Maintained for existing installs.",
@@ -21,6 +22,7 @@
             "general",
             "rtl"
         ],
+        "downloads": 62,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-storefront/main/screenshot.png",
         "name": "storefront",
         "short_description": "The bundled default Shopclass theme since 6.0.0 — a modern, responsive, vanilla-JS classifieds front end with automatic RTL and WCAG 2.1 AA contrast.",
