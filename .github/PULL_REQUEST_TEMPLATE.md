@@ -1,7 +1,7 @@
 <!--
-This registry is not yet accepting submissions — automated PR validation is not built.
-See the notice at the top of CONTRIBUTING.md. Opening a PR now is fine for discussion,
-but it will not be merged until that gate exists.
+Automated validation runs on this PR and checks whether the registration/theme works. A
+maintainer separately reviews whether it belongs in the registry (scope, duplication,
+maintenance, accuracy) — see CONTRIBUTING.md.
 -->
 
 ### What is this?

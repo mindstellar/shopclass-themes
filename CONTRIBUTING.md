@@ -1,13 +1,11 @@
 # Contributing a theme
 
-> [!IMPORTANT]
-> **This registry is not yet accepting submissions.** The catalog build (`catalog.yml`) exists and
-> publishes for real once core ships `package-ci/build-catalog.php` (`docs/MARKET.md` §7 in the core
-> repository) — until then, a catalog build run is a visible, deliberate no-op rather than a
-> failure. What's still missing is the other half: no core release yet reads the catalog
-> (`docs/MARKET.md` Phase 5), so even a published catalog entry cannot be discovered or installed by
-> a site today. The most useful contribution today is an issue rather than a pull request — see
-> `.github/ISSUE_TEMPLATE/`.
+Registrations and submissions are open — add yours and open a pull request. Automated CI checks
+whether it *works* (schema, reachability, header parse, compatibility fields, and — for an
+in-repo theme — `php -l`, a security scan, and a smoke install); a maintainer separately reviews
+whether it *belongs* here: in scope for a classifieds CMS, not a duplicate without reason,
+evidently maintained, and accurately described. That review is best-effort by a small team, so
+expect it to take a few days rather than be instant.
 
 The full package contract — header fields, versioning, artwork, security requirements — is
 specified in `docs/PACKAGE-SPEC.md` in the
@@ -61,13 +59,18 @@ release asset names — write it to keep matching future releases, not just your
 
 ### 3. What happens after that
 
-The catalog builder (once it exists — see the root README's status table) resolves your
-registration by fetching your repository's releases, picking the asset matching
+The catalog builder resolves your registration by fetching your repository's releases, picking the asset matching
 `asset_pattern`, downloading it, and reading the theme's real `index.php` header **out of
 that zip** — never from anything you type into the JSON file. Name, version, and
 compatibility come from the artifact a site would actually install, so the catalog cannot
 drift from reality. It runs on a schedule, so a new release of your theme needs no further
 action here once you're registered.
+
+Two catalog details worth knowing: the admin Browse tab defaults to sorting by "Recently
+updated," taken from your newest release's publish time — cutting no releases for a while sinks
+your theme toward the bottom regardless of quality. It can also sort by `downloads`, which is
+GitHub's own cumulative release-asset download count (includes CI, mirrors, and repeat
+downloads) — a popularity signal, not an install count.
 
 ---
 
@@ -76,10 +79,9 @@ action here once you're registered.
 Fork this repository and add `themes/<slug>/` with the files PACKAGE-SPEC §1 and §6 require —
 `index.php`, `shopclass.json` (validating against
 [`schema/theme.schema.json`](schema/theme.schema.json)), `screenshot.png` at the package
-root, `LICENSE`, and a `README.md`/`CHANGELOG.md`. Open a pull request. Once PR validation
-exists, it runs the structure/manifest/header/compatibility/security/smoke-install gates
-described in `docs/MARKET.md` §6 against your package directory; until then, see the notice
-at the top of this document.
+root, `LICENSE`, and a `README.md`/`CHANGELOG.md`. Open a pull request — PR validation runs the
+structure/manifest/header/compatibility/security/smoke-install gates described in
+`docs/MARKET.md` §6 against your package directory.
 
 This repository has no release workflow yet — see ["What happens when an in-repo theme is
 added"](README.md#what-happens-when-an-in-repo-theme-is-added) in the root `README.md` for
@@ -89,7 +91,7 @@ what ships the day the first one lands here.
 
 ## Running the validator locally
 
-`package-lint.php` is the same validator the registry's CI will run — it lives in core, not here,
+`package-lint.php` is the same validator the registry's CI runs — it lives in core, not here,
 so there is exactly one implementation of the contract. From Shopclass 6.1.0 onward it is attached
 to each release along with the one companion file it needs, `Compatibility.php`; download both into
 one directory and it finds them itself:

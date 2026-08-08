@@ -4,16 +4,10 @@ The theme registry for [Shopclass](https://github.com/mindstellar/shopclass) —
 a Shopclass site browses, installs, and updates themes from, with GitHub itself as the
 backend. No market server, no accounts, no database anywhere but the site's own.
 
-> [!IMPORTANT]
-> **This registry is not yet accepting submissions.** The catalog build (`catalog.yml`) exists and
-> publishes for real once core ships `package-ci/build-catalog.php` (`docs/MARKET.md` §7 in the core
-> repository) — until then, a catalog build run is a visible, deliberate no-op rather than a
-> failure. This repo has no in-repo release workflow (nothing here needs one yet — see "Currently
-> registered" below); a new release of `bender` or `storefront` in its own repository is picked up
-> by the catalog's daily schedule. What's still missing is the other half: no core release yet reads
-> the catalog (`docs/MARKET.md` Phase 5), so even a published catalog entry cannot be discovered or
-> installed by a site today. The most useful contribution today is an issue rather than a pull
-> request — see `.github/ISSUE_TEMPLATE/`.
+Registrations are open, by pull request — see `CONTRIBUTING.md` for the walkthrough, what CI
+checks, and what a maintainer reviews beyond that. This repo has no in-repo release workflow
+(nothing here needs one yet — see "Currently registered" below); a new release of `bender` or
+`storefront` in its own repository is picked up by the catalog's daily schedule automatically.
 
 ## Two ways a theme gets here
 
@@ -39,30 +33,31 @@ theme took.
 
 | Theme | Hosting | Latest | Role |
 |---|---|---|---|
-| [`bender`](external/bender.json) | External — [mindstellar/theme-bender](https://github.com/mindstellar/theme-bender) | v3.3.0 | Legacy default theme, superseded by Storefront in Shopclass 6.0.0. Still maintained for existing installs. |
+| [`bender`](external/bender.json) | External — [mindstellar/theme-bender](https://github.com/mindstellar/theme-bender) | v3.3.1 | Legacy default theme, superseded by Storefront in Shopclass 6.0.0. Still maintained for existing installs. |
 | [`storefront`](external/storefront.json) | External — [mindstellar/theme-storefront](https://github.com/mindstellar/theme-storefront) | v1.0.2 | Bundled default theme since Shopclass 6.0.0. |
 
 ## The catalog
 
-Once the release and catalog build pipeline lands, this registry publishes a static, versioned
-catalog that core reads directly — no per-package API calls, one conditional GET per day:
+This registry publishes a static, versioned catalog that core reads directly — no per-package API
+calls, one conditional GET per day:
 
 | File | Purpose |
 |---|---|
-| `v1/updates.json` | Every registered theme, every released version, with its compatibility fields — what an install's update check polls |
-| `v1/index.json` | Slim browse list — slug, name, short description, author, latest version, icon, categories, tags |
-| `v1/packages/<slug>.json` | Full detail — rendered README, screenshots, per-version changelog, links |
+| `v1/updates.json` | Every registered theme, every released version, with its compatibility fields and `downloads` — what an install's update check polls |
+| `v1/index.json` | Slim browse list — slug, name, short description, author, latest version, icon, categories, tags, `updated_at`, `downloads` |
+| `v1/packages/<slug>.json` | Full detail — rendered README, screenshots, per-version changelog, links, `downloads` |
 | `v1/categories.json` | The category vocabulary in [`schema/categories.json`](schema/categories.json), with counts |
 
-Published to GitHub Pages from a `catalog` branch, at
+`downloads` is GitHub's own cumulative release-asset download count (includes CI, mirrors, and
+repeat downloads — not an install count); the admin's Browse tab can sort by it, and otherwise
+defaults to "Recently updated" (`updated_at`, taken from each theme's newest release).
+
+Published to GitHub Pages from a `catalog` branch, live at
 `https://mindstellar.github.io/shopclass-themes/v1/…`, mirrored at
 `https://raw.githubusercontent.com/mindstellar/shopclass-themes/catalog/v1/…` for when Pages
-is unreachable. `catalog.yml` runs (on release, daily, and on demand) but has nothing to build
-against until core publishes `package-ci/build-catalog.php` — until then the `catalog` branch
-does not exist, and a run skips visibly rather than publishing an empty or fabricated catalog.
-Both URLs go live from the first run that actually builds something.
+is unreachable. `catalog.yml` rebuilds on release, daily, and on demand.
 
-## What's real today and what's planned
+## What's real today and what's not
 
 | Piece | Status |
 |---|---|
@@ -70,10 +65,12 @@ Both URLs go live from the first run that actually builds something.
 | `external/bender.json`, `external/storefront.json` | Real registrations |
 | `CONTRIBUTING.md` walkthrough, `tools/package-lint.php` (in core) | Real — you can run it today |
 | PR validation — external registrations (`.github/workflows/pr-validate.yml`): schema, reachability, release/asset resolution, package-lint against the downloaded artifact | Real |
-| PR validation — in-repo themes: schema, package-lint, `php -l`, deprecated-API scan | Real, minus the smoke-install gate (not built) |
+| PR validation — in-repo themes: schema, package-lint, `php -l`, deprecated-API scan, smoke install | Real |
 | Release build (`release.yml`) — zip, tag, GitHub Release per package | Not applicable yet — no in-repo theme exists to release; see below |
-| Catalog build (`catalog.yml`) and the `catalog` branch / Pages deploy | Built. Runs on release, daily, and on demand; publishes once core ships `package-ci/build-catalog.php`, skips visibly until then |
-| Core catalog client (`Catalog`, browse/install UI) | Not built |
+| Catalog build (`catalog.yml`) and the `catalog` branch / Pages deploy | Real — live at the URLs above, rebuilding on release, daily, and on demand |
+| Core catalog client (`Catalog`, Browse/Updates tabs, install/update) | Real — shipped in Shopclass 6.1.0 |
+| Catalog signing | Not built |
+| Rendered author-docs site | Not built |
 
 ### What happens when an in-repo theme is added
 

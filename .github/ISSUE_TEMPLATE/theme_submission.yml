@@ -5,9 +5,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        **This registry is not yet accepting submissions** — PR validation isn't built,
-        so nothing can be merged yet. Use this form to ask a question or flag interest;
-        it is not a submission itself. See CONTRIBUTING.md for the two hosting paths.
+        Registrations are open by pull request — see CONTRIBUTING.md for the two hosting paths,
+        you don't need to ask first. Use this form only if you have a question before (or
+        instead of) opening one; it is not a submission itself.
   - type: input
     id: theme-name
     attributes:
