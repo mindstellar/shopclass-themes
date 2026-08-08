@@ -1,0 +1,32 @@
+name: Bug report
+description: Something in this registry — a manifest, a schema, the docs — is wrong.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This repository holds registry metadata, not theme source. If the bug is in a
+        theme itself (a rendering issue, a broken template), report it against that
+        theme's own repository instead.
+  - type: input
+    id: affected-file
+    attributes:
+      label: Affected file
+      description: e.g. external/storefront.json, schema/theme.schema.json
+      placeholder: path/to/file
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What's wrong
+      description: What you expected versus what the file/schema/doc actually says or does.
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else
+      description: Links, validator output, screenshots — whatever's relevant.
+    validations:
+      required: false

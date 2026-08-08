@@ -1,0 +1,60 @@
+{
+  "$comment": "Fixed category vocabulary consumed by schema/theme.schema.json and schema/external.schema.json (the 'categories' enum in both must match the ids below). Themes are categorised by layout/target — what kind of listings the theme is built to present — which is a different axis than the plugin registry's function-based categories. Add an entry only for a category a real theme would claim.",
+  "categories": [
+    {
+      "id": "general",
+      "label": "General",
+      "description": "Broad-purpose layout suited to any classifieds vertical, not built around one listing type."
+    },
+    {
+      "id": "marketplace",
+      "label": "Marketplace",
+      "description": "Multi-vendor / storefront layouts — seller profiles, product-style grids, shop pages."
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate",
+      "description": "Property listing layouts — galleries, maps, floor plans, and structured specs."
+    },
+    {
+      "id": "jobs",
+      "label": "Jobs",
+      "description": "Job-board layouts — company profiles, salary and employment-type fields, application flow."
+    },
+    {
+      "id": "vehicles",
+      "label": "Vehicles",
+      "description": "Auto/vehicle listing layouts — spec tables, comparison views, mileage and condition fields."
+    },
+    {
+      "id": "directory",
+      "label": "Directory",
+      "description": "Business or service directory layouts — profile pages over classified listing pages."
+    },
+    {
+      "id": "minimal",
+      "label": "Minimal",
+      "description": "Stripped-down, typography-first layout with few decorative components."
+    },
+    {
+      "id": "magazine",
+      "label": "Magazine",
+      "description": "Editorial layout blending listings with articles, featured content, and a homepage grid."
+    },
+    {
+      "id": "mobile-first",
+      "label": "Mobile-first",
+      "description": "Designed primarily for small viewports, with the desktop layout as the adaptation."
+    },
+    {
+      "id": "rtl",
+      "label": "RTL",
+      "description": "First-class right-to-left layout support beyond CSS logical-property patching."
+    },
+    {
+      "id": "accessibility",
+      "label": "Accessibility",
+      "description": "Built or audited for WCAG conformance — contrast, keyboard navigation, screen-reader structure."
+    }
+  ]
+}

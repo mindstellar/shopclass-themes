@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/mindstellar/shopclass-themes/main/schema/external.schema.json",
+  "title": "Shopclass theme external registration",
+  "description": "Registration for a theme hosted in its own repository, at external/<slug>.json. See docs/MARKET.md §3.2 in the mindstellar/shopclass repository for how the catalog builder resolves this into a catalog entry; this schema is the enforceable half of that contract, not a restatement of it.",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{1,40}$",
+      "description": "Must equal this file's basename (external/<slug>.json)."
+    },
+    "type": {
+      "const": "theme"
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "github-release"
+        },
+        "repo": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9._-]*[A-Za-z0-9])?/[A-Za-z0-9](?:[A-Za-z0-9._-]*[A-Za-z0-9])?$",
+          "description": "owner/name of the theme's own GitHub repository."
+        }
+      },
+      "required": ["kind", "repo"],
+      "additionalProperties": false
+    },
+    "asset_pattern": {
+      "type": "string",
+      "minLength": 1,
+      "description": "PCRE regex matched against release asset names to pick the distributable zip; should keep matching future releases, not just the current one."
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "general",
+          "marketplace",
+          "real-estate",
+          "jobs",
+          "vehicles",
+          "directory",
+          "minimal",
+          "magazine",
+          "mobile-first",
+          "rtl",
+          "accessibility"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true,
+      "description": "Drawn from schema/categories.json. At least one."
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 32
+      },
+      "maxItems": 8,
+      "uniqueItems": true,
+      "description": "Free-form, unlike categories."
+    },
+    "short_description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "icon": {
+      "type": "string",
+      "format": "uri",
+      "description": "Catalog card thumbnail. Themes carry no separate icon asset (PACKAGE-SPEC §6), so this is typically the raw URL of the theme's own screenshot.png."
+    },
+    "support": {
+      "type": "object",
+      "properties": {
+        "issues": {
+          "type": "string",
+          "format": "uri"
+        },
+        "docs": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1,
+      "description": "SPDX identifier. Omit rather than guess if the upstream repository does not declare one unambiguously."
+    }
+  },
+  "required": ["slug", "type", "source", "asset_pattern", "categories", "short_description"],
+  "additionalProperties": false
+}

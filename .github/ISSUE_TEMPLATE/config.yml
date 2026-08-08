@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Shopclass core issues
+    url: https://github.com/mindstellar/shopclass/issues
+    about: For core Shopclass bugs and feature requests, not registry metadata.

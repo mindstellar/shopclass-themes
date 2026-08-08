@@ -1,0 +1,39 @@
+name: Theme submission question
+description: Ask about registering or hosting a theme here, before opening a PR.
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **This registry is not yet accepting submissions** — PR validation isn't built,
+        so nothing can be merged yet. Use this form to ask a question or flag interest;
+        it is not a submission itself. See CONTRIBUTING.md for the two hosting paths.
+  - type: input
+    id: theme-name
+    attributes:
+      label: Theme name
+    validations:
+      required: true
+  - type: dropdown
+    id: hosting
+    attributes:
+      label: Hosting model
+      description: External registration (your own repo) or in-repo hosting?
+      options:
+        - External — I have my own repository
+        - In-repo — I don't have a home for it
+    validations:
+      required: true
+  - type: input
+    id: repo-url
+    attributes:
+      label: Repository URL
+      description: If externally hosted, link it. Leave blank otherwise.
+    validations:
+      required: false
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+    validations:
+      required: true

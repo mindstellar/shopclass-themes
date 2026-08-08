@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/mindstellar/shopclass-themes/main/schema/theme.schema.json",
+  "title": "Shopclass theme manifest (shopclass.json)",
+  "description": "Catalog-facing metadata for a theme hosted inside this repository, under themes/<slug>/shopclass.json. See docs/PACKAGE-SPEC.md §7 in the mindstellar/shopclass repository for what this file is for and how it relates to the index.php header block; this schema is the enforceable half of that contract, not a restatement of it.",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{1,40}$",
+      "description": "Must equal the theme's directory name under themes/."
+    },
+    "type": {
+      "const": "theme"
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "general",
+          "marketplace",
+          "real-estate",
+          "jobs",
+          "vehicles",
+          "directory",
+          "minimal",
+          "magazine",
+          "mobile-first",
+          "rtl",
+          "accessibility"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true,
+      "description": "Drawn from schema/categories.json. At least one."
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 32
+      },
+      "maxItems": 8,
+      "uniqueItems": true,
+      "description": "Free-form, unlike categories."
+    },
+    "short_description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "screenshots": {
+      "type": "array",
+      "description": "Additional screenshots beyond the required package-root screenshot.png (PACKAGE-SPEC §6). Optional.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "src": {
+            "type": "string",
+            "minLength": 1
+          },
+          "caption": {
+            "type": "string"
+          }
+        },
+        "required": ["src"],
+        "additionalProperties": false
+      }
+    },
+    "support": {
+      "type": "object",
+      "properties": {
+        "issues": {
+          "type": "string",
+          "format": "uri"
+        },
+        "docs": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false
+    },
+    "funding": {
+      "type": "string",
+      "format": "uri"
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1,
+      "description": "SPDX identifier, matching the LICENSE file (PACKAGE-SPEC §11)."
+    }
+  },
+  "required": ["slug", "type", "categories", "short_description", "license"],
+  "additionalProperties": false
+}

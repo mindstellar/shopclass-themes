@@ -1,0 +1,17 @@
+{
+  "$schema": "../schema/external.schema.json",
+  "slug": "bender",
+  "type": "theme",
+  "source": {
+    "kind": "github-release",
+    "repo": "mindstellar/theme-bender"
+  },
+  "asset_pattern": "^bender_.*\\.zip$",
+  "categories": ["general"],
+  "tags": ["legacy"],
+  "short_description": "The legacy default Shopclass theme, replaced by Storefront in 6.0.0. Maintained for existing installs.",
+  "icon": "https://raw.githubusercontent.com/mindstellar/theme-bender/master/screenshot.png",
+  "support": {
+    "issues": "https://github.com/mindstellar/theme-bender/issues"
+  }
+}

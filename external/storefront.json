@@ -1,0 +1,18 @@
+{
+  "$schema": "../schema/external.schema.json",
+  "slug": "storefront",
+  "type": "theme",
+  "source": {
+    "kind": "github-release",
+    "repo": "mindstellar/theme-storefront"
+  },
+  "asset_pattern": "^storefront_.*\\.zip$",
+  "categories": ["general", "rtl", "accessibility"],
+  "tags": ["vanilla-js", "responsive", "default"],
+  "short_description": "The bundled default Shopclass theme since 6.0.0 — a modern, responsive, vanilla-JS classifieds front end with automatic RTL and WCAG 2.1 AA contrast.",
+  "icon": "https://raw.githubusercontent.com/mindstellar/theme-storefront/main/screenshot.png",
+  "support": {
+    "issues": "https://github.com/mindstellar/theme-storefront/issues"
+  },
+  "license": "GPL-3.0-or-later"
+}
