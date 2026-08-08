@@ -1,0 +1,60 @@
+{
+    "bender": [
+        {
+            "requires": "6.0.0",
+            "requires_php": "8.0",
+            "sha256": "ddea193db8c3aac311176886215e48fae5b4a47a01bb9bcd547a1e4734545075",
+            "size": 1113185,
+            "tested": "6.1",
+            "url": "https://github.com/mindstellar/theme-bender/releases/download/v3.3.1/bender_3.3.1.zip",
+            "version": "3.3.1"
+        },
+        {
+            "requires": null,
+            "requires_php": null,
+            "sha256": "62b2fe4a246c80dbc32e40485a7e755d10e6da0c9e20aed989679add7bd38664",
+            "size": 1109035,
+            "tested": null,
+            "url": "https://github.com/mindstellar/theme-bender/releases/download/v3.3.0/bender_3.3.0.zip",
+            "version": "3.3.0"
+        },
+        {
+            "requires": null,
+            "requires_php": null,
+            "sha256": "3ff152c0ddee748a14da3f5e1079d1a39dfb6dec9b57d49020a7451a66fd8601",
+            "size": 1033613,
+            "tested": null,
+            "url": "https://github.com/mindstellar/theme-bender/releases/download/v3.2.3/bender_3.2.3.zip",
+            "version": "3.2.3"
+        }
+    ],
+    "storefront": [
+        {
+            "requires": null,
+            "requires_php": null,
+            "sha256": "1c931c4cbcff60995f55084f83499c4d3b3a5ce9d2661163cdee6d110a44fb33",
+            "size": 276662,
+            "tested": null,
+            "url": "https://github.com/mindstellar/theme-storefront/releases/download/v1.0.2/storefront_1.0.2.zip",
+            "version": "1.0.2"
+        },
+        {
+            "requires": null,
+            "requires_php": null,
+            "sha256": "8188db56d13afd45cbb143dc645ad944f40bb295a1d482b61aaf0f77a011c60d",
+            "size": 253774,
+            "tested": null,
+            "url": "https://github.com/mindstellar/theme-storefront/releases/download/v1.0.1/storefront_1.0.1.zip",
+            "version": "1.0.1"
+        },
+        {
+            "requires": null,
+            "requires_php": null,
+            "sha256": "420a66c234e6c402dc659af4e144f9501c53c5e4f1184529cb85733439ef7e77",
+            "size": 253413,
+            "tested": null,
+            "url": "https://github.com/mindstellar/theme-storefront/releases/download/v1.0.0/storefront_1.0.0.zip",
+            "version": "1.0.0"
+        }
+    ]
+}

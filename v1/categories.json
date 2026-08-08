@@ -1,0 +1,68 @@
+[
+    {
+        "count": 1,
+        "description": "Built or audited for WCAG conformance — contrast, keyboard navigation, screen-reader structure.",
+        "id": "accessibility",
+        "label": "Accessibility"
+    },
+    {
+        "count": 0,
+        "description": "Business or service directory layouts — profile pages over classified listing pages.",
+        "id": "directory",
+        "label": "Directory"
+    },
+    {
+        "count": 2,
+        "description": "Broad-purpose layout suited to any classifieds vertical, not built around one listing type.",
+        "id": "general",
+        "label": "General"
+    },
+    {
+        "count": 0,
+        "description": "Job-board layouts — company profiles, salary and employment-type fields, application flow.",
+        "id": "jobs",
+        "label": "Jobs"
+    },
+    {
+        "count": 0,
+        "description": "Editorial layout blending listings with articles, featured content, and a homepage grid.",
+        "id": "magazine",
+        "label": "Magazine"
+    },
+    {
+        "count": 0,
+        "description": "Multi-vendor / storefront layouts — seller profiles, product-style grids, shop pages.",
+        "id": "marketplace",
+        "label": "Marketplace"
+    },
+    {
+        "count": 0,
+        "description": "Stripped-down, typography-first layout with few decorative components.",
+        "id": "minimal",
+        "label": "Minimal"
+    },
+    {
+        "count": 0,
+        "description": "Designed primarily for small viewports, with the desktop layout as the adaptation.",
+        "id": "mobile-first",
+        "label": "Mobile-first"
+    },
+    {
+        "count": 0,
+        "description": "Property listing layouts — galleries, maps, floor plans, and structured specs.",
+        "id": "real-estate",
+        "label": "Real Estate"
+    },
+    {
+        "count": 1,
+        "description": "First-class right-to-left layout support beyond CSS logical-property patching.",
+        "id": "rtl",
+        "label": "RTL"
+    },
+    {
+        "count": 0,
+        "description": "Auto/vehicle listing layouts — spec tables, comparison views, mileage and condition fields.",
+        "id": "vehicles",
+        "label": "Vehicles"
+    }
+]
