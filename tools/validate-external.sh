@@ -184,7 +184,11 @@ if [[ -f "${PACKAGE_CI_DIR}/package-lint.php" ]]; then
   core_version="$(cat "${PACKAGE_CI_DIR}/CORE_VERSION" 2>/dev/null || echo "0.0.0")"
   compat_flag=()
   [[ -f "${PACKAGE_CI_DIR}/Compatibility.php" ]] && compat_flag=(--compat="${PACKAGE_CI_DIR}/Compatibility.php")
-  lint_json="$(php "${PACKAGE_CI_DIR}/package-lint.php" --type=theme --core="${core_version}" "${compat_flag[@]}" --json "${PKG_DIR}" 2>"${OUT_DIR}/lint-stderr.log" || true)"
+versions_flag=()
+if [[ -f "${PACKAGE_CI_DIR}/core-versions.json" ]]; then
+  versions_flag=(--core-versions="${PACKAGE_CI_DIR}/core-versions.json")
+fi
+  lint_json="$(php "${PACKAGE_CI_DIR}/package-lint.php" --type=theme --core="${core_version}" "${compat_flag[@]}" "${versions_flag[@]}" --json "${PKG_DIR}" 2>"${OUT_DIR}/lint-stderr.log" || true)"
   echo "${lint_json}" >"${OUT_DIR}/artifact-lint.json"
   if [[ -n "${lint_json}" ]] && jq empty <<<"${lint_json}" 2>/dev/null; then
     while IFS= read -r e; do

@@ -58,13 +58,26 @@ esac
 WORK="$(mktemp -d)"
 trap 'rm -rf "${WORK}"' EXIT
 
+# Sorts by version rather than trusting list order: GitHub's /releases is not
+# guaranteed newest-first (it has returned beta10 below beta9), so taking [0]
+# can pin an older release than one further down. Also writes the full tag list
+# to core-versions.json for package-lint.php's --core-versions checks.
 resolve_latest_core_version() {
   local body rc=0
-  body="$(gh_api "https://api.github.com/repos/${CORE_REPO}/releases?per_page=20")" || rc=$?
+  body="$(gh_api "https://api.github.com/repos/${CORE_REPO}/releases?per_page=100")" || rc=$?
   if [[ ${rc} -ne 0 ]]; then
     return 1
   fi
-  printf '%s' "${body}" | jq -r '[.[] | select(.draft == false)][0].tag_name // empty'
+  printf '%s' "${body}" \
+    | jq -r '.[] | select(.draft == false) | .tag_name' \
+    | grep -E '^[0-9]+(\.[0-9]+)*(\.(dev|alpha|beta|rc)[0-9]*)?$' \
+    | php -r '
+        $tags = array_values(array_filter(array_map("trim", file("php://stdin"))));
+        if ($tags === []) { exit(0); }
+        file_put_contents(getenv("CORE_VERSIONS_OUT") ?: "core-versions.json", json_encode($tags));
+        usort($tags, fn($a, $b) => version_compare($b, $a));
+        echo $tags[0];
+      '
 }
 
 # Preferred path: a release asset. Returns 1 (not a hard error) on anything
