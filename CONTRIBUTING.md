@@ -1,11 +1,12 @@
 # Contributing a theme
 
 > [!IMPORTANT]
-> **This registry is not yet accepting submissions.** Pull-request validation runs, but there is no
-> catalog and no release automation yet (`docs/MARKET.md` Phases 4 and 7 in the core repository), so
-> a merged package still cannot be published or installed by anyone. Validation also expects a
-> Shopclass release carrying the shared validator; until one exists, a run builds it from core's
-> source instead. The most useful contribution today is an issue rather than a pull request — see
+> **This registry is not yet accepting submissions.** The catalog build (`catalog.yml`) exists and
+> publishes for real once core ships `package-ci/build-catalog.php` (`docs/MARKET.md` §7 in the core
+> repository) — until then, a catalog build run is a visible, deliberate no-op rather than a
+> failure. What's still missing is the other half: no core release yet reads the catalog
+> (`docs/MARKET.md` Phase 5), so even a published catalog entry cannot be discovered or installed by
+> a site today. The most useful contribution today is an issue rather than a pull request — see
 > `.github/ISSUE_TEMPLATE/`.
 
 The full package contract — header fields, versioning, artwork, security requirements — is
@@ -79,6 +80,10 @@ root, `LICENSE`, and a `README.md`/`CHANGELOG.md`. Open a pull request. Once PR 
 exists, it runs the structure/manifest/header/compatibility/security/smoke-install gates
 described in `docs/MARKET.md` §6 against your package directory; until then, see the notice
 at the top of this document.
+
+This repository has no release workflow yet — see ["What happens when an in-repo theme is
+added"](README.md#what-happens-when-an-in-repo-theme-is-added) in the root `README.md` for
+what ships the day the first one lands here.
 
 ---
 

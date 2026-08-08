@@ -5,7 +5,10 @@
 # `mindstellar/shopclass` release carrying a `shopclass-package-ci.tar.gz`
 # asset; that asset does not exist in any release yet, so the fallback below
 # — a shallow clone of core, assembled into the same layout — is what
-# actually runs today.
+# actually runs today. The same bundle also carries build-catalog.php
+# (docs/MARKET.md §7), consumed by catalog.yml rather than pr-validate.yml;
+# it isn't published yet either, so it follows the same missing-and-visible
+# path as the four gates above it.
 #
 # Usage: tools/fetch-package-ci.sh [--out=DIR] [--core-repo=owner/name|path] [--ref=REF]
 #
@@ -166,7 +169,10 @@ fallback_clone() {
 
   # These are expected to live under core's tools/ci/ once that harness ships;
   # every consumer of package-ci/ must treat them as optional until it does.
-  for rel in tools/ci/deprecation-scan.php tools/ci/annotate.php tools/ci/smoke-install.sh; do
+  # build-catalog.php (docs/MARKET.md §7) is consumed by catalog.yml, not by
+  # pr-validate.yml, but it ships in the same tools/ci/ and the same bundle,
+  # so it is fetched here rather than by a second fetcher.
+  for rel in tools/ci/deprecation-scan.php tools/ci/annotate.php tools/ci/smoke-install.sh tools/ci/build-catalog.php; do
     local base
     base="$(basename "${rel}")"
     if [[ -f "${src}/${rel}" ]]; then

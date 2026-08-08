@@ -1,0 +1,148 @@
+name: Build and publish catalog
+
+# docs/MARKET.md §5 and §7. This file is intentionally byte-identical between
+# mindstellar/shopclass-plugins and mindstellar/shopclass-themes — it does the
+# same job in both repos (fetch the shared harness, run
+# package-ci/build-catalog.php, publish v1/ to the catalog branch), so the
+# only thing that differs between the two is data resolved at runtime
+# (PACKAGE_TYPE, below), never the steps themselves. If this file needs to
+# change, change it in both repos identically — see the note in each repo's
+# tools/fetch-package-ci.sh header for the same discipline applied there.
+#
+# Triggers:
+#   - release: published   fires for a release created through the web UI or
+#     a PAT; a release created by release.yml using the default GITHUB_TOKEN
+#     does NOT fire this (GitHub does not chain GITHUB_TOKEN-authored events
+#     into new workflow runs), which is why release.yml ends with an explicit
+#     `gh workflow run catalog.yml` — that goes through workflow_dispatch,
+#     the one event type GITHUB_TOKEN is allowed to trigger.
+#   - workflow_dispatch    manual runs, and the trigger release.yml actually uses.
+#   - schedule (daily)     the only thing that notices a new release landing in
+#     an *externally* registered repo (bender, storefront, ...) — nothing in
+#     either registry gets a webhook for those.
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      max_versions:
+        description: 'Newest N versions per package to resolve into updates.json'
+        required: false
+        default: '20'
+  schedule:
+    - cron: '17 3 * * *'
+
+concurrency:
+  group: catalog-publish
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  CORE_REPO: mindstellar/shopclass
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - name: Determine package type for this registry
+        id: type
+        run: |
+          PACKAGE_TYPE=plugin
+          case "$GITHUB_REPOSITORY" in
+            *-themes) PACKAGE_TYPE=theme ;;
+          esac
+          echo "type=${PACKAGE_TYPE}" >> "$GITHUB_OUTPUT"
+          echo "Building a ${PACKAGE_TYPE} catalog for ${GITHUB_REPOSITORY}."
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: none
+
+      - name: Resolve latest released core version
+        id: core-version
+        run: |
+          VERSION="$(curl -fsSL --retry 3 --retry-delay 2 "https://api.github.com/repos/${CORE_REPO}/releases/latest" | jq -r '.tag_name // empty')"
+          if [ -z "$VERSION" ]; then
+            echo "::warning::Could not resolve a latest stable release for ${CORE_REPO}; building against 0.0.0."
+            VERSION="0.0.0"
+          fi
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "Latest released core: ${VERSION}"
+
+      # docs/MARKET.md §6.4 / §7 — one shared harness, downloaded, never
+      # reimplemented here. build-catalog.php is a new component of that same
+      # bundle; see the header of this script for what happens while core has
+      # not published it yet.
+      - name: Fetch package-ci harness
+        run: tools/fetch-package-ci.sh --out=package-ci --core-repo="${CORE_REPO}"
+
+      - name: Check whether build-catalog.php has shipped yet
+        id: builder
+        run: |
+          if [ -f package-ci/build-catalog.php ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::package-ci/build-catalog.php is not published by ${CORE_REPO} yet (docs/MARKET.md §7) — catalog build skipped this run, nothing published. This is expected until core ships it and is not a failure."
+          fi
+
+      - name: Build catalog (package-ci/build-catalog.php)
+        if: steps.builder.outputs.present == 'true'
+        run: |
+          php package-ci/build-catalog.php \
+            --type="${{ steps.type.outputs.type }}" \
+            --root=. \
+            --out=catalog-out \
+            --core-version="${{ steps.core-version.outputs.version }}" \
+            --max-versions="${{ github.event.inputs.max_versions || '20' }}"
+
+      - name: Publish v1/ to the catalog branch
+        if: steps.builder.outputs.present == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git ls-remote --exit-code --heads origin catalog >/dev/null 2>&1; then
+            git fetch origin catalog:catalog
+            git worktree add catalog-branch catalog
+          else
+            echo "catalog: branch does not exist yet on origin — creating it."
+            git worktree add --detach catalog-branch
+            git -C catalog-branch checkout --orphan catalog
+            git -C catalog-branch rm -rf . >/dev/null 2>&1 || true
+          fi
+
+          mkdir -p catalog-branch/v1
+          rsync -a --delete catalog-out/v1/ catalog-branch/v1/
+          touch catalog-branch/.nojekyll
+
+          cd catalog-branch
+          git add -A
+          if git diff --cached --quiet; then
+            echo "catalog: build output unchanged since the last publish — nothing to commit, nothing to deploy."
+          else
+            git commit -q -m "Rebuild catalog (core ${{ steps.core-version.outputs.version }})"
+            git push origin HEAD:catalog
+            echo "catalog: published to the catalog branch."
+          fi
+
+      - name: Skip summary
+        if: steps.builder.outputs.present == 'false'
+        run: echo "No catalog build this run — see the notice above."
