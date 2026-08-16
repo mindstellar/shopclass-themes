@@ -4,7 +4,7 @@
         "categories": [
             "general"
         ],
-        "downloads": 602,
+        "downloads": 608,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-bender/master/screenshot.png",
         "name": "bender",
         "requires_min": "6.0.0",
@@ -24,10 +24,10 @@
             "general",
             "rtl"
         ],
-        "downloads": 102,
+        "downloads": 105,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-storefront/main/screenshot.png",
         "name": "storefront",
-        "requires_min": null,
+        "requires_min": "6.0.0",
         "short_description": "The bundled default Shopclass theme since 6.0.0 — a modern, responsive, vanilla-JS classifieds front end with automatic RTL and WCAG 2.1 AA contrast.",
         "slug": "storefront",
         "tags": [
@@ -35,8 +35,8 @@
             "responsive",
             "vanilla-js"
         ],
-        "tested_max": null,
-        "updated_at": "2026-08-04T02:59:27Z",
-        "version": "1.0.2"
+        "tested_max": "6.2",
+        "updated_at": "2026-08-16T13:51:08Z",
+        "version": "1.1.0"
     }
 ]
