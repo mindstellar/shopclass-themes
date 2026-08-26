@@ -1,7 +1,7 @@
 {
     "bender": [
         {
-            "downloads": 36,
+            "downloads": 38,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "ddea193db8c3aac311176886215e48fae5b4a47a01bb9bcd547a1e4734545075",
@@ -11,7 +11,7 @@
             "version": "3.3.1"
         },
         {
-            "downloads": 38,
+            "downloads": 40,
             "requires": null,
             "requires_php": null,
             "sha256": "62b2fe4a246c80dbc32e40485a7e755d10e6da0c9e20aed989679add7bd38664",
@@ -21,7 +21,7 @@
             "version": "3.3.0"
         },
         {
-            "downloads": 581,
+            "downloads": 583,
             "requires": null,
             "requires_php": null,
             "sha256": "3ff152c0ddee748a14da3f5e1079d1a39dfb6dec9b57d49020a7451a66fd8601",
@@ -33,7 +33,17 @@
     ],
     "storefront": [
         {
-            "downloads": 24,
+            "downloads": 0,
+            "requires": "6.0.0",
+            "requires_php": "8.0",
+            "sha256": "0cfe0a8a6a20cc5b68e15c770046e0a7691dd694ca44e12aaaa33880253d9be1",
+            "size": 278520,
+            "tested": "6.2",
+            "url": "https://github.com/mindstellar/theme-storefront/releases/download/v1.2.0/storefront_1.2.0.zip",
+            "version": "1.2.0"
+        },
+        {
+            "downloads": 36,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "22cedcddd9288ce7f7c4516564751f265b94ee77b21f447a2eaab4692c53b89d",
@@ -43,7 +53,7 @@
             "version": "1.1.0"
         },
         {
-            "downloads": 74,
+            "downloads": 76,
             "requires": null,
             "requires_php": null,
             "sha256": "1c931c4cbcff60995f55084f83499c4d3b3a5ce9d2661163cdee6d110a44fb33",
@@ -53,7 +63,7 @@
             "version": "1.0.2"
         },
         {
-            "downloads": 30,
+            "downloads": 33,
             "requires": null,
             "requires_php": null,
             "sha256": "8188db56d13afd45cbb143dc645ad944f40bb295a1d482b61aaf0f77a011c60d",
@@ -63,7 +73,7 @@
             "version": "1.0.1"
         },
         {
-            "downloads": 28,
+            "downloads": 30,
             "requires": null,
             "requires_php": null,
             "sha256": "420a66c234e6c402dc659af4e144f9501c53c5e4f1184529cb85733439ef7e77",
