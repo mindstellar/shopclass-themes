@@ -7,11 +7,11 @@
         "rtl"
     ],
     "description_html": "<h1>Storefront</h1>\n<p>The default public theme for <a href=\"https://github.com/mindstellar/shopclass\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">Shopclass</a> — a modern, responsive, <strong>vanilla-JS</strong> (no jQuery) classifieds front end.</p>\n<h2>Design</h2>\n<ul><li><strong>Three selectable colour palettes</strong> (Teal / Indigo / Violet) on a warm-sand ground with deep-navy</li></ul>\n<p>  ink; <strong>light, dark or auto</strong> (follows the OS). Every palette × mode combination meets <strong>WCAG 2.1 AA</strong>   contrast. Picked in the admin (see below), or retuned through the CSS design tokens in   <code>css/storefront.css</code> (<code>--color-*</code>, <code>--font-*</code>, <code>--space-*</code>, <code>--radius-*</code>, <code>--shadow-*</code>).</p>\n<ul><li>Card-grid listings, sticky search, accessible mobile nav, <strong>automatic RTL</strong> via logical CSS</li></ul>\n<p>  properties (switches on right-to-left locales — no setting to manage).</p>\n<ul><li>Consumes only the public Shopclass theme API (<code>osc_*</code> helpers and hooks) — no reach into core</li></ul>\n<p>  internals.</p>\n<h2>Install</h2>\n<p>Shopclass 6.0.0+ bundles Storefront in the release zip and activates it on a fresh install. To install manually, drop this folder into <code>oc-content/themes/storefront/</code> and activate it under <strong>Settings → Appearance</strong>.</p>\n<h2>Theme settings</h2>\n<p>Storefront adds two admin pages under <strong>Appearance</strong> — rebrand and retune the front end without touching code. Everything is stored as theme preferences (so it survives theme updates) and read at render time.</p>\n<h3>Appearance → Storefront: Brand</h3>\n<ul><li><strong>Site name</strong> — the wordmark shown when no logo image is set, and the accessible site name in every</li></ul>\n<p>  case.</p>\n<ul><li><strong>Logo</strong> — upload an <strong>SVG, PNG or JPG</strong>. An SVG is sanitized on upload (scripts, event handlers and</li></ul>\n<p>  remote references are stripped) and inlined so it follows the current text colour — one file that   looks right in both light and dark mode. PNG/JPG logos are saved to <code>oc-content/uploads/</code>.</p>\n<ul><li><strong>Compact logo</strong> (optional) — a square-ish mark shown on small screens; falls back to the main logo</li></ul>\n<p>  when left empty.</p>\n<h3>Appearance → Storefront: Settings</h3>\n<ul><li><strong>Colour palette</strong> — <strong>Teal</strong> (default), <strong>Indigo</strong> or <strong>Violet</strong>. Swaps the primary and secondary</li></ul>\n<p>  accents site-wide; each is tuned to clear <strong>WCAG 2.1 AA</strong> in both light and dark.</p>\n<ul><li><strong>Colour scheme</strong> — <strong>Light</strong>, <strong>Dark</strong>, or <strong>Auto</strong> (matches each visitor&#039;s device setting).</li><li><strong>Home / Hero</strong> — override the headline and tagline; toggle the decorative graphic, the</li></ul>\n<p>  popular-category chips, and the featured (promoted) listings row.</p>\n<ul><li><strong>Search &amp; location</strong><ul><li><em>Post &amp; edit form</em> — location fields as type-ahead <strong>autocomplete</strong> or cascading <strong>dropdowns</strong>.</li><li><em>Search page</em> — <strong>Country + Region + City</strong>, <strong>Region + City</strong> (for single-country sites — hides the</li></ul></li></ul>\n<p>    country choice and scopes to the default country), or <strong>Autocomplete</strong>.</p>\n<ul><li><em>Search box placeholder</em> text and the <em>default results view</em> (gallery or list).</li></ul>\n<ul><li><strong>Footer &amp; social</strong> — footer tagline; links for Facebook, X, Instagram, YouTube and LinkedIn (each</li></ul>\n<p>  icon is hidden when its field is blank); and the &quot;Powered by Shopclass&quot; credit toggle.</p>\n<p>Leaving a text field blank restores its built-in default (e.g. the site title for the hero headline).</p>\n<h2>Local development</h2>\n<p>Clone next to your Shopclass checkout and symlink it in:</p>\n<pre><code>git clone git@github.com:mindstellar/theme-storefront.git\nln -s &quot;$(pwd)/theme-storefront&quot; /path/to/shopclass/oc-content/themes/storefront</code></pre>\n<p><code>oc-content/themes/*</code> is gitignored in the core repo, so the symlink won&#039;t show up there.</p>\n<h2>Assets &amp; build</h2>\n<p>Source <code>css/*.css</code> and <code>js/*.js</code> are committed and readable; the theme runs straight from them in local dev — <strong>no build step is required to develop</strong>. For production, a minify pass emits <code>*.min.css</code> / <code>*.min.js</code> siblings that <code>functions.php</code> loads automatically when present (falling back to source otherwise):</p>\n<pre><code>npm install     # once — installs esbuild + gettext-parser (the dev dependencies)\nnpm run build   # writes css/storefront.min.css, js/storefront-*.min.js, and languages/*/theme.mo</code></pre>\n<p>Generated <code>*.min.*</code> and compiled <code>languages/**/theme.mo</code> files, plus <code>node_modules/</code>, are gitignored; the release workflow builds them fresh. The toolchain is pure Node — no system <code>gettext</code> required.</p>\n<h2>Translations</h2>\n<p>UI strings use the gettext domain <strong><code>storefront</code></strong> (<code>__()</code> / <code>_e()</code> / <code>_n()</code>), which core loads from <code>languages/&lt;locale&gt;/theme.mo</code> for the active locale. The theme ships a default <strong><code>en_US</code></strong> catalogue and a <code>languages/storefront.pot</code> template.</p>\n<pre><code>npm run i18n    # re-extract strings -&gt; languages/storefront.pot + languages/en_US/theme.po\nnpm run build   # compile every languages/&lt;locale&gt;/theme.po -&gt; theme.mo (also builds assets)</code></pre>\n<p>Run <code>npm run i18n</code> after adding or changing UI strings, and commit the updated <code>.pot</code> / <code>.po</code> (the compiled <code>.mo</code> is a build artifact). To add a language, copy <code>languages/en_US/theme.po</code> to <code>languages/&lt;locale&gt;/theme.po</code> (e.g. <code>es_ES</code>), translate the <code>msgstr</code> entries, and run <code>npm run build</code>.</p>\n<p><strong>JS is split per surface and loaded only where it is used</strong> — <code>storefront-core</code> (site chrome, every page), <code>storefront-item</code> (listing gallery/lightbox/map), <code>storefront-search</code> (filter drawer, location autocomplete, search-alert — search page, home hero, post/edit form), and <code>storefront-account</code> (avatar editor). Each view enqueues its own bundle; all scripts are deferred.</p>\n<h2>Releases</h2>\n<p>Pushing a <code>vX.Y.Z</code> tag runs <code>.github/workflows/release.yml</code>, which builds the minified assets, packages the theme as <code>storefront_X.Y.Z.zip</code> (source + <code>*.min.*</code>, without the build tooling), and publishes a GitHub release. Shopclass&#039;s <code>.build.sh</code> fetches the <strong>latest</strong> release asset at build time and bundles it into the core zip.</p>\n<h2>Showcases Shopclass 6.0.0</h2>\n<p>Storefront is meant to double as a reference for what the platform can do:</p>\n<ul><li><strong>Featured (premium) listings</strong> on the home page via <code>osc_get_premiums()</code>.</li><li><strong>Related listings</strong> on the item page (same category, live only) — see <code>storefront_related_items()</code>.</li><li><strong>Custom fields</strong> rendered on the item page through the item-meta API (<code>osc_has_item_meta()</code>).</li><li><strong>Friendly-named resource downloads</strong> (<code>osc_resource_download_url()</code>) in the gallery.</li><li><strong>Cache-safe view counts</strong> — the theme is stateless and never counts a view at render time, so</li></ul>\n<p>  core&#039;s JS beacon does the counting and full-page caching keeps working.</p>\n<ul><li><strong>Widget zones</strong> (<code>header</code>, <code>footer</code>, <code>item_sidebar</code>) for drop-in plugin components.</li><li><strong>Vanilla JS only</strong>, light + dark mode, RTL via logical properties.</li></ul>\n<h2>Plugin hooks</h2>\n<p>Storefront fires the hook names existing Osclass plugins already target, plus a few of its own so plugins can inject content into the new sections:</p>\n<table><thead><tr><th>Hook</th><th>Where</th></tr></thead><tbody><tr><td><code>header</code>, <code>footer</code></td><td><code>&lt;head&gt;</code> end / before <code>&lt;/body&gt;</code> (asset + ad injection)</td></tr><tr><td><code>before-main</code>, <code>after-main</code></td><td>Around the main content region</td></tr><tr><td><code>search_ads_listing_top</code></td><td>Top of home and search results</td></tr><tr><td><code>search_ads_listing_medium</code></td><td>Interspersed every 6 search results</td></tr><tr><td><code>home_before_featured</code>, <code>home_after_featured</code></td><td>Around the home featured row</td></tr><tr><td><code>home_before_listings</code>, <code>home_after_listings</code></td><td>Around the home latest-listings row</td></tr><tr><td><code>item_meta</code>, <code>item_detail</code></td><td>Item page body</td></tr><tr><td><code>item_before_related</code>, <code>item_after_related</code></td><td>Around the item related-listings row</td></tr><tr><td><code>item_sidebar</code></td><td>Item page aside (alongside the <code>item_sidebar</code> widget zone)</td></tr><tr><td><code>item_contact_form</code></td><td>Inside the seller-contact form</td></tr></tbody></table>\n<h2>License</h2>\n<p>GPL-3.0-or-later. © Mindstellar Community.</p>",
-    "downloads": 196,
+    "downloads": 207,
     "funding": null,
     "homepage": "https://github.com/mindstellar/theme-storefront",
     "icon": "https://raw.githubusercontent.com/mindstellar/theme-storefront/main/screenshot.png",
-    "latest_version": "1.2.0",
+    "latest_version": "1.3.0",
     "license": "GPL-3.0-or-later",
     "name": "storefront",
     "requires_min": "6.0.0",
@@ -30,11 +30,23 @@
     ],
     "tested_max": "6.2",
     "type": "theme",
-    "updated_at": "2026-08-26T09:12:23Z",
+    "updated_at": "2026-08-29T03:23:44Z",
     "versions": [
         {
             "changelog_html": "",
-            "downloads": 13,
+            "downloads": 2,
+            "published_at": "2026-08-29T03:23:44Z",
+            "requires": "6.0.0",
+            "requires_php": "8.0",
+            "sha256": "1c079ca220cf9835b8b26cbabd6cc61878f35e40d8dfb4ffcfea374c8cc38ce6",
+            "size": 281887,
+            "tested": "6.2",
+            "url": "https://github.com/mindstellar/theme-storefront/releases/download/v1.3.0/storefront_1.3.0.zip",
+            "version": "1.3.0"
+        },
+        {
+            "changelog_html": "",
+            "downloads": 18,
             "published_at": "2026-08-26T09:12:23Z",
             "requires": "6.0.0",
             "requires_php": "8.0",
@@ -46,7 +58,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 38,
+            "downloads": 39,
             "published_at": "2026-08-16T13:51:08Z",
             "requires": "6.0.0",
             "requires_php": "8.0",
@@ -58,7 +70,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 78,
+            "downloads": 79,
             "published_at": "2026-08-04T02:59:27Z",
             "requires": null,
             "requires_php": null,
@@ -70,7 +82,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 35,
+            "downloads": 36,
             "published_at": "2026-08-03T16:49:25Z",
             "requires": null,
             "requires_php": null,
@@ -82,7 +94,7 @@
         },
         {
             "changelog_html": "<p>First public release of <strong>Storefront</strong> — the default public theme for <a href=\"https://github.com/mindstellar/shopclass\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">Shopclass</a>: a modern, responsive, <strong>vanilla-JS</strong> (no jQuery) classifieds front end.</p>\n<h2>Highlights</h2>\n<h3>Admin settings backend</h3>\n<p>Two pages under <strong>Appearance</strong> let operators rebrand and retune the front end without touching code (all options are stored as theme preferences and survive theme updates):</p>\n<ul><li><strong>Brand &amp; Logo</strong> — site-name wordmark; logo upload accepting <strong>SVG, PNG or JPG</strong>. SVGs are sanitized on upload (scripts and remote references stripped) and inlined so they follow the text colour — correct in both light and dark mode. Optional compact logo for small screens.</li><li><strong>Settings</strong> — colour palette, colour scheme, home hero, search &amp; location behaviour, footer &amp; social, and more (below).</li></ul>\n<h3>Design &amp; accessibility</h3>\n<ul><li><strong>Three selectable colour palettes</strong> — Teal (default), Indigo, Violet — on a warm-sand ground with deep-navy ink.</li><li><strong>Light, dark or auto</strong> colour scheme (auto follows each visitor&#039;s device).</li><li>Every palette × mode combination meets <strong>WCAG 2.1 AA</strong> contrast — including accent text in dark mode.</li><li><strong>Automatic RTL</strong> from the visitor&#039;s locale, via logical CSS properties.</li><li>Photo-forward card grid, sticky search, accessible mobile navigation.</li></ul>\n<h3>Search &amp; location</h3>\n<ul><li>Search-page location as <strong>Country + Region + City</strong>, <strong>Region + City</strong> (for single-country sites), or <strong>type-ahead autocomplete</strong>.</li><li>Post/edit form location as autocomplete or cascading dropdowns.</li><li>Location autocomplete built on core&#039;s shared combobox — no jQuery.</li></ul>\n<h3>Home &amp; content</h3>\n<ul><li>Configurable hero headline &amp; tagline; toggles for the decorative graphic, popular-category chips, and the <strong>featured (promoted) listings</strong> row.</li><li>Featured listings, related listings, custom fields, and widget zones (<code>header</code>, <code>footer</code>, <code>item_sidebar</code>).</li></ul>\n<h3>Performance</h3>\n<ul><li>JS split per surface and loaded only where used; all scripts deferred.</li><li>Minified assets ship in the release; stateless, cache-safe rendering.</li></ul>\n<h2>Install</h2>\n<p>Storefront ships bundled with <strong>Shopclass 6.0.0+</strong> and is activated on a fresh install. To install manually, unzip <code>storefront_1.0.0.zip</code> into <code>oc-content/themes/</code> and activate it under <strong>Settings → Appearance</strong>.</p>\n<p><strong>Full documentation:</strong> see the <a href=\"https://github.com/mindstellar/theme-storefront#readme\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">README</a>.</p>",
-            "downloads": 32,
+            "downloads": 33,
             "published_at": "2026-08-03T16:33:53Z",
             "requires": null,
             "requires_php": null,
