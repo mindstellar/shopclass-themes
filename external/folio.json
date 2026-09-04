@@ -1,0 +1,18 @@
+{
+  "$schema": "../schema/external.schema.json",
+  "slug": "folio",
+  "type": "theme",
+  "source": {
+    "kind": "github-release",
+    "repo": "mindstellar/theme-folio"
+  },
+  "asset_pattern": "^folio_.*\\.zip$",
+  "categories": ["minimal", "general"],
+  "tags": ["no-build", "native-html", "typography", "no-javascript"],
+  "short_description": "A typography-first Shopclass theme built on native HTML5 elements — one hand-written stylesheet, eight lines of JavaScript, no build step.",
+  "icon": "https://raw.githubusercontent.com/mindstellar/theme-folio/main/screenshot.png",
+  "support": {
+    "issues": "https://github.com/mindstellar/theme-folio/issues"
+  },
+  "license": "GPL-3.0-or-later"
+}
