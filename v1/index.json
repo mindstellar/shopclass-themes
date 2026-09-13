@@ -4,7 +4,7 @@
         "categories": [
             "general"
         ],
-        "downloads": 720,
+        "downloads": 725,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-bender/master/screenshot.png",
         "name": "bender",
         "requires_min": "6.0.0",
@@ -24,7 +24,7 @@
             "general",
             "rtl"
         ],
-        "downloads": 305,
+        "downloads": 312,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-storefront/main/screenshot.png",
         "name": "storefront",
         "requires_min": "6.0.0",
