@@ -12,7 +12,7 @@
         "label": "Directory"
     },
     {
-        "count": 2,
+        "count": 3,
         "description": "Broad-purpose layout suited to any classifieds vertical, not built around one listing type.",
         "id": "general",
         "label": "General"
@@ -36,7 +36,7 @@
         "label": "Marketplace"
     },
     {
-        "count": 0,
+        "count": 1,
         "description": "Stripped-down, typography-first layout with few decorative components.",
         "id": "minimal",
         "label": "Minimal"

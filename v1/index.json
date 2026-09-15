@@ -4,7 +4,7 @@
         "categories": [
             "general"
         ],
-        "downloads": 730,
+        "downloads": 733,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-bender/master/screenshot.png",
         "name": "bender",
         "requires_min": "6.0.0",
@@ -20,11 +20,33 @@
     {
         "author": "Mindstellar",
         "categories": [
+            "general",
+            "minimal"
+        ],
+        "downloads": 4,
+        "icon": "https://raw.githubusercontent.com/mindstellar/theme-folio/main/screenshot.png",
+        "name": "folio",
+        "requires_min": "6.3.0",
+        "short_description": "A typography-first Shopclass theme built on native HTML5 elements — one hand-written stylesheet, eight lines of JavaScript, no build step.",
+        "slug": "folio",
+        "tags": [
+            "native-html",
+            "no-build",
+            "no-javascript",
+            "typography"
+        ],
+        "tested_max": "6.3",
+        "updated_at": "2026-09-04T09:29:58Z",
+        "version": "0.1.0"
+    },
+    {
+        "author": "Mindstellar",
+        "categories": [
             "accessibility",
             "general",
             "rtl"
         ],
-        "downloads": 329,
+        "downloads": 340,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-storefront/main/screenshot.png",
         "name": "storefront",
         "requires_min": "6.0.0",
