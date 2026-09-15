@@ -4,7 +4,7 @@
         "categories": [
             "general"
         ],
-        "downloads": 733,
+        "downloads": 739,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-bender/master/screenshot.png",
         "name": "bender",
         "requires_min": "6.0.0",
@@ -23,7 +23,7 @@
             "general",
             "minimal"
         ],
-        "downloads": 4,
+        "downloads": 7,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-folio/main/screenshot.png",
         "name": "folio",
         "requires_min": "6.3.0",
@@ -46,7 +46,7 @@
             "general",
             "rtl"
         ],
-        "downloads": 340,
+        "downloads": 352,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-storefront/main/screenshot.png",
         "name": "storefront",
         "requires_min": "6.0.0",
