@@ -4,7 +4,7 @@
         "categories": [
             "general"
         ],
-        "downloads": 781,
+        "downloads": 785,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-bender/master/screenshot.png",
         "name": "bender",
         "requires_min": "6.0.0",
@@ -23,7 +23,7 @@
             "general",
             "minimal"
         ],
-        "downloads": 52,
+        "downloads": 55,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-folio/main/screenshot.png",
         "name": "folio",
         "requires_min": "6.3.0",
@@ -46,7 +46,7 @@
             "general",
             "rtl"
         ],
-        "downloads": 475,
+        "downloads": 483,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-storefront/main/screenshot.png",
         "name": "storefront",
         "requires_min": "6.0.0",
@@ -58,7 +58,7 @@
             "vanilla-js"
         ],
         "tested_max": "6.4",
-        "updated_at": "2026-09-25T07:13:13Z",
-        "version": "1.3.2"
+        "updated_at": "2026-09-25T08:38:18Z",
+        "version": "1.3.3"
     }
 ]
