@@ -11,7 +11,7 @@
     "funding": null,
     "homepage": "https://github.com/mindstellar/theme-storefront",
     "icon": "https://raw.githubusercontent.com/mindstellar/theme-storefront/main/screenshot.png",
-    "latest_version": "1.3.1",
+    "latest_version": "1.3.2",
     "license": "GPL-3.0-or-later",
     "name": "storefront",
     "requires_min": "6.0.0",
@@ -28,10 +28,22 @@
         "responsive",
         "vanilla-js"
     ],
-    "tested_max": "6.3",
+    "tested_max": "6.4",
     "type": "theme",
-    "updated_at": "2026-09-25T07:10:50Z",
+    "updated_at": "2026-09-25T07:13:13Z",
     "versions": [
+        {
+            "changelog_html": "",
+            "downloads": 0,
+            "published_at": "2026-09-25T07:13:13Z",
+            "requires": "6.0.0",
+            "requires_php": "8.0",
+            "sha256": "56f22814bb5512b94411956b5cede31a22ce183a56ff8c25f641fef415a6a490",
+            "size": 366402,
+            "tested": "6.4",
+            "url": "https://github.com/mindstellar/theme-storefront/releases/download/v1.3.2/storefront_1.3.2.zip",
+            "version": "1.3.2"
+        },
         {
             "changelog_html": "",
             "downloads": 0,
