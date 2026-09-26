@@ -1,7 +1,7 @@
 {
     "bender": [
         {
-            "downloads": 0,
+            "downloads": 5,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "350f5edb19fe9ee4715a4c27427ce274e734adaadc1f101647f0ad3220928a1f",
@@ -11,7 +11,7 @@
             "version": "3.3.3"
         },
         {
-            "downloads": 5,
+            "downloads": 6,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "28bc28482045db9f79cfcb8553a2ca41989ada7be52f55c59c20a2f75071e713",
@@ -21,7 +21,7 @@
             "version": "3.3.2"
         },
         {
-            "downloads": 89,
+            "downloads": 90,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "ddea193db8c3aac311176886215e48fae5b4a47a01bb9bcd547a1e4734545075",
@@ -31,7 +31,7 @@
             "version": "3.3.1"
         },
         {
-            "downloads": 79,
+            "downloads": 80,
             "requires": null,
             "requires_php": null,
             "sha256": "62b2fe4a246c80dbc32e40485a7e755d10e6da0c9e20aed989679add7bd38664",
@@ -41,7 +41,7 @@
             "version": "3.3.0"
         },
         {
-            "downloads": 622,
+            "downloads": 623,
             "requires": null,
             "requires_php": null,
             "sha256": "3ff152c0ddee748a14da3f5e1079d1a39dfb6dec9b57d49020a7451a66fd8601",
@@ -53,7 +53,17 @@
     ],
     "folio": [
         {
-            "downloads": 23,
+            "downloads": 0,
+            "requires": "6.3.0",
+            "requires_php": "8.0",
+            "sha256": "b404c7981be22c4af851cf92e98e3bf579a63369ac4561e414a540f9bd464759",
+            "size": 156481,
+            "tested": "6.4",
+            "url": "https://github.com/mindstellar/theme-folio/releases/download/v0.4.2/folio_0.4.2.zip",
+            "version": "0.4.2"
+        },
+        {
+            "downloads": 25,
             "requires": "6.3.0",
             "requires_php": "8.0",
             "sha256": "58cf62f41f25f808a8207230904d2729d9aa9086dc29fda5be63c7fbc59769f8",
@@ -63,7 +73,7 @@
             "version": "0.4.1"
         },
         {
-            "downloads": 17,
+            "downloads": 18,
             "requires": "6.3.0",
             "requires_php": "8.0",
             "sha256": "305deafa794b85711dbccb6f44cb5f2fb3760b0c97eecb02ce2f45edced400c4",
@@ -73,7 +83,7 @@
             "version": "0.4.0"
         },
         {
-            "downloads": 21,
+            "downloads": 22,
             "requires": "6.3.0",
             "requires_php": "8.0",
             "sha256": "0585f49f817bbbb0471bc7874b45a78655c9a62adcee43049940446b7e9a8dcc",
@@ -85,7 +95,17 @@
     ],
     "storefront": [
         {
-            "downloads": 0,
+            "downloads": 2,
+            "requires": "6.0.0",
+            "requires_php": "8.0",
+            "sha256": "e44c0571b87ef047fd923d10e43adcb0a778192769c034fa32ad3fe2a93a792d",
+            "size": 367595,
+            "tested": "6.4",
+            "url": "https://github.com/mindstellar/theme-storefront/releases/download/v1.3.5/storefront_1.3.5.zip",
+            "version": "1.3.5"
+        },
+        {
+            "downloads": 8,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "5dd90ca505c0792cda70faf21191dd270d87c74ebfae4764d8cfc59f77e942e9",
@@ -95,7 +115,7 @@
             "version": "1.3.4"
         },
         {
-            "downloads": 4,
+            "downloads": 5,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "94fc61c7bdf6cc39a7da174fe6e52ce0da12c66eb42b2535dd8194771693bdec",
@@ -105,7 +125,7 @@
             "version": "1.3.3"
         },
         {
-            "downloads": 4,
+            "downloads": 5,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "56f22814bb5512b94411956b5cede31a22ce183a56ff8c25f641fef415a6a490",
@@ -115,7 +135,7 @@
             "version": "1.3.2"
         },
         {
-            "downloads": 6,
+            "downloads": 7,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "caaa6847696e22f0256f9ab6242269c747c74dc6eb6ca00eff7f9623384d8b2d",
@@ -125,7 +145,7 @@
             "version": "1.3.1"
         },
         {
-            "downloads": 88,
+            "downloads": 91,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "1c079ca220cf9835b8b26cbabd6cc61878f35e40d8dfb4ffcfea374c8cc38ce6",
@@ -135,7 +155,7 @@
             "version": "1.3.0"
         },
         {
-            "downloads": 77,
+            "downloads": 80,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "0cfe0a8a6a20cc5b68e15c770046e0a7691dd694ca44e12aaaa33880253d9be1",
@@ -145,7 +165,7 @@
             "version": "1.2.0"
         },
         {
-            "downloads": 73,
+            "downloads": 74,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "22cedcddd9288ce7f7c4516564751f265b94ee77b21f447a2eaab4692c53b89d",
@@ -155,7 +175,7 @@
             "version": "1.1.0"
         },
         {
-            "downloads": 114,
+            "downloads": 115,
             "requires": null,
             "requires_php": null,
             "sha256": "1c931c4cbcff60995f55084f83499c4d3b3a5ce9d2661163cdee6d110a44fb33",
@@ -165,7 +185,7 @@
             "version": "1.0.2"
         },
         {
-            "downloads": 70,
+            "downloads": 71,
             "requires": null,
             "requires_php": null,
             "sha256": "8188db56d13afd45cbb143dc645ad944f40bb295a1d482b61aaf0f77a011c60d",
@@ -175,7 +195,7 @@
             "version": "1.0.1"
         },
         {
-            "downloads": 67,
+            "downloads": 68,
             "requires": null,
             "requires_php": null,
             "sha256": "420a66c234e6c402dc659af4e144f9501c53c5e4f1184529cb85733439ef7e77",
