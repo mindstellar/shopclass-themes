@@ -1,7 +1,7 @@
 {
     "bender": [
         {
-            "downloads": 16,
+            "downloads": 18,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "350f5edb19fe9ee4715a4c27427ce274e734adaadc1f101647f0ad3220928a1f",
@@ -11,7 +11,7 @@
             "version": "3.3.3"
         },
         {
-            "downloads": 14,
+            "downloads": 15,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "28bc28482045db9f79cfcb8553a2ca41989ada7be52f55c59c20a2f75071e713",
@@ -21,7 +21,7 @@
             "version": "3.3.2"
         },
         {
-            "downloads": 99,
+            "downloads": 100,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "ddea193db8c3aac311176886215e48fae5b4a47a01bb9bcd547a1e4734545075",
@@ -31,7 +31,7 @@
             "version": "3.3.1"
         },
         {
-            "downloads": 88,
+            "downloads": 89,
             "requires": null,
             "requires_php": null,
             "sha256": "62b2fe4a246c80dbc32e40485a7e755d10e6da0c9e20aed989679add7bd38664",
@@ -41,7 +41,7 @@
             "version": "3.3.0"
         },
         {
-            "downloads": 631,
+            "downloads": 632,
             "requires": null,
             "requires_php": null,
             "sha256": "3ff152c0ddee748a14da3f5e1079d1a39dfb6dec9b57d49020a7451a66fd8601",
@@ -53,7 +53,7 @@
     ],
     "folio": [
         {
-            "downloads": 10,
+            "downloads": 11,
             "requires": "6.3.0",
             "requires_php": "8.0",
             "sha256": "a23054d1b142fefa9f4e70f4c622ae69c5fa8d3d8f2db24f39c3c9f711347f34",
@@ -63,7 +63,7 @@
             "version": "0.4.3"
         },
         {
-            "downloads": 10,
+            "downloads": 11,
             "requires": "6.3.0",
             "requires_php": "8.0",
             "sha256": "b404c7981be22c4af851cf92e98e3bf579a63369ac4561e414a540f9bd464759",
@@ -73,7 +73,7 @@
             "version": "0.4.2"
         },
         {
-            "downloads": 33,
+            "downloads": 34,
             "requires": "6.3.0",
             "requires_php": "8.0",
             "sha256": "58cf62f41f25f808a8207230904d2729d9aa9086dc29fda5be63c7fbc59769f8",
@@ -83,7 +83,7 @@
             "version": "0.4.1"
         },
         {
-            "downloads": 26,
+            "downloads": 27,
             "requires": "6.3.0",
             "requires_php": "8.0",
             "sha256": "305deafa794b85711dbccb6f44cb5f2fb3760b0c97eecb02ce2f45edced400c4",
@@ -93,7 +93,7 @@
             "version": "0.4.0"
         },
         {
-            "downloads": 30,
+            "downloads": 31,
             "requires": "6.3.0",
             "requires_php": "8.0",
             "sha256": "0585f49f817bbbb0471bc7874b45a78655c9a62adcee43049940446b7e9a8dcc",
@@ -105,7 +105,7 @@
     ],
     "storefront": [
         {
-            "downloads": 4,
+            "downloads": 11,
             "requires": "6.4.0",
             "requires_php": "8.0",
             "sha256": "0bf48007cfa45d9f5a5f134e6e9f2993963ccd61a7444da16abe85f0da98c497",
@@ -115,7 +115,7 @@
             "version": "2.0.1"
         },
         {
-            "downloads": 10,
+            "downloads": 11,
             "requires": "6.4.0",
             "requires_php": "8.0",
             "sha256": "0fba02e80a9d17cc8d7bfc6e6863ccc76c0c423d086d49efa18f4a209b749966",
@@ -125,7 +125,7 @@
             "version": "2.0.0"
         },
         {
-            "downloads": 7,
+            "downloads": 8,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "de03641fc6bb953407d4495e05a54a555eee95ce9cbb94580f1ec9debed9f075",
@@ -135,7 +135,7 @@
             "version": "1.3.6"
         },
         {
-            "downloads": 41,
+            "downloads": 42,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "e44c0571b87ef047fd923d10e43adcb0a778192769c034fa32ad3fe2a93a792d",
@@ -145,7 +145,7 @@
             "version": "1.3.5"
         },
         {
-            "downloads": 16,
+            "downloads": 18,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "5dd90ca505c0792cda70faf21191dd270d87c74ebfae4764d8cfc59f77e942e9",
@@ -155,7 +155,7 @@
             "version": "1.3.4"
         },
         {
-            "downloads": 13,
+            "downloads": 14,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "94fc61c7bdf6cc39a7da174fe6e52ce0da12c66eb42b2535dd8194771693bdec",
@@ -165,7 +165,7 @@
             "version": "1.3.3"
         },
         {
-            "downloads": 13,
+            "downloads": 14,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "56f22814bb5512b94411956b5cede31a22ce183a56ff8c25f641fef415a6a490",
@@ -175,7 +175,7 @@
             "version": "1.3.2"
         },
         {
-            "downloads": 15,
+            "downloads": 16,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "caaa6847696e22f0256f9ab6242269c747c74dc6eb6ca00eff7f9623384d8b2d",
@@ -185,7 +185,7 @@
             "version": "1.3.1"
         },
         {
-            "downloads": 121,
+            "downloads": 126,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "1c079ca220cf9835b8b26cbabd6cc61878f35e40d8dfb4ffcfea374c8cc38ce6",
@@ -195,7 +195,7 @@
             "version": "1.3.0"
         },
         {
-            "downloads": 90,
+            "downloads": 91,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "0cfe0a8a6a20cc5b68e15c770046e0a7691dd694ca44e12aaaa33880253d9be1",
@@ -205,7 +205,7 @@
             "version": "1.2.0"
         },
         {
-            "downloads": 82,
+            "downloads": 83,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "22cedcddd9288ce7f7c4516564751f265b94ee77b21f447a2eaab4692c53b89d",
@@ -215,7 +215,7 @@
             "version": "1.1.0"
         },
         {
-            "downloads": 123,
+            "downloads": 124,
             "requires": null,
             "requires_php": null,
             "sha256": "1c931c4cbcff60995f55084f83499c4d3b3a5ce9d2661163cdee6d110a44fb33",
@@ -225,7 +225,7 @@
             "version": "1.0.2"
         },
         {
-            "downloads": 79,
+            "downloads": 80,
             "requires": null,
             "requires_php": null,
             "sha256": "8188db56d13afd45cbb143dc645ad944f40bb295a1d482b61aaf0f77a011c60d",
@@ -235,7 +235,7 @@
             "version": "1.0.1"
         },
         {
-            "downloads": 76,
+            "downloads": 77,
             "requires": null,
             "requires_php": null,
             "sha256": "420a66c234e6c402dc659af4e144f9501c53c5e4f1184529cb85733439ef7e77",
