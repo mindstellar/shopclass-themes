@@ -45,7 +45,7 @@ jobs:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 1
-      - run: tools/fetch-package-ci.sh package-ci
+      - run: tools/fetch-package-ci.sh --out=package-ci
       - uses: actions/upload-artifact@v4
         with:
           name: package-ci
