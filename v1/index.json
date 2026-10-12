@@ -4,7 +4,7 @@
         "categories": [
             "general"
         ],
-        "downloads": 896,
+        "downloads": 901,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-bender/master/screenshot.png",
         "name": "bender",
         "requires_min": "6.0.0",
@@ -23,7 +23,7 @@
             "general",
             "minimal"
         ],
-        "downloads": 154,
+        "downloads": 161,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-folio/main/screenshot.png",
         "name": "folio",
         "requires_min": "6.3.0",
@@ -44,9 +44,32 @@
         "categories": [
             "accessibility",
             "general",
+            "vehicles"
+        ],
+        "downloads": 2,
+        "icon": "https://raw.githubusercontent.com/mindstellar/theme-glance/main/screenshot.png",
+        "name": "glance",
+        "requires_min": "7.0.0",
+        "short_description": "A classifieds theme for comparing ads: read each ad in a side panel without losing your place in the list.",
+        "slug": "glance",
+        "tags": [
+            "dark-mode",
+            "responsive",
+            "side-panel",
+            "vanilla-js"
+        ],
+        "tested_max": "7.0.0",
+        "updated_at": "2026-10-12T20:28:38Z",
+        "version": "1.0.0"
+    },
+    {
+        "author": "Mindstellar",
+        "categories": [
+            "accessibility",
+            "general",
             "rtl"
         ],
-        "downloads": 873,
+        "downloads": 895,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-storefront/main/screenshot.png",
         "name": "storefront",
         "requires_min": "6.0.0",
