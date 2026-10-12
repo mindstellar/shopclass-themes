@@ -35,6 +35,7 @@ theme took.
 |---|---|---|---|
 | [`bender`](external/bender.json) | External: [mindstellar/theme-bender](https://github.com/mindstellar/theme-bender) | v3.3.1 | Legacy default theme, superseded by Storefront in ShopClass 6.0.0. Still maintained for existing installs. |
 | [`storefront`](external/storefront.json) | External: [mindstellar/theme-storefront](https://github.com/mindstellar/theme-storefront) | v1.0.2 | Bundled default theme since ShopClass 6.0.0. |
+| [`glance`](external/glance.json) | External: [mindstellar/theme-glance](https://github.com/mindstellar/theme-glance) | v1.0.0 | Classifieds theme for comparing ads in a side panel. Requires ShopClass 7.0.0. |
 
 ## The catalog
 

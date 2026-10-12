@@ -1,0 +1,18 @@
+{
+  "$schema": "../schema/external.schema.json",
+  "slug": "glance",
+  "type": "theme",
+  "source": {
+    "kind": "github-release",
+    "repo": "mindstellar/theme-glance"
+  },
+  "asset_pattern": "^glance_.*\\.zip$",
+  "categories": ["general", "vehicles", "accessibility"],
+  "tags": ["vanilla-js", "responsive", "dark-mode", "side-panel"],
+  "short_description": "A classifieds theme for comparing ads: read each ad in a side panel without losing your place in the list.",
+  "icon": "https://raw.githubusercontent.com/mindstellar/theme-glance/main/screenshot.png",
+  "support": {
+    "issues": "https://github.com/mindstellar/theme-glance/issues"
+  },
+  "license": "GPL-3.0-or-later"
+}
