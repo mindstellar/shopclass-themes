@@ -4,7 +4,7 @@
         "categories": [
             "general"
         ],
-        "downloads": 907,
+        "downloads": 914,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-bender/master/screenshot.png",
         "name": "bender",
         "requires_min": "6.0.0",
@@ -23,7 +23,7 @@
             "general",
             "minimal"
         ],
-        "downloads": 167,
+        "downloads": 175,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-folio/main/screenshot.png",
         "name": "folio",
         "requires_min": "6.3.0",
@@ -46,7 +46,7 @@
             "general",
             "vehicles"
         ],
-        "downloads": 5,
+        "downloads": 6,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-glance/main/screenshot.png",
         "name": "glance",
         "requires_min": "7.0.0",
@@ -69,7 +69,7 @@
             "general",
             "rtl"
         ],
-        "downloads": 911,
+        "downloads": 950,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-storefront/main/screenshot.png",
         "name": "storefront",
         "requires_min": "6.0.0",
