@@ -1,8 +1,8 @@
 {
-    "core_version": "7.0.0.beta4",
-    "generated_at": "2026-10-16T10:30:52Z",
+    "core_version": "7.0.0.beta5",
+    "generated_at": "2026-10-17T05:58:48Z",
     "package_count": 4,
-    "resolved_version_count": 27,
+    "resolved_version_count": 28,
     "schema_version": "1",
     "type": "theme"
 }
