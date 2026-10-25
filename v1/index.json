@@ -4,7 +4,7 @@
         "categories": [
             "general"
         ],
-        "downloads": 974,
+        "downloads": 979,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-bender/master/screenshot.png",
         "name": "bender",
         "requires_min": "6.0.0",
@@ -23,7 +23,7 @@
             "general",
             "minimal"
         ],
-        "downloads": 253,
+        "downloads": 260,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-folio/main/screenshot.png",
         "name": "folio",
         "requires_min": "6.3.0",
@@ -36,8 +36,8 @@
             "typography"
         ],
         "tested_max": "7.1.0",
-        "updated_at": "2026-10-24T08:00:38Z",
-        "version": "0.6.0"
+        "updated_at": "2026-10-25T10:25:14Z",
+        "version": "0.6.1"
     },
     {
         "author": "Mindstellar",
@@ -46,7 +46,7 @@
             "general",
             "vehicles"
         ],
-        "downloads": 43,
+        "downloads": 46,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-glance/main/screenshot.png",
         "name": "glance",
         "requires_min": "7.0.0",
@@ -59,8 +59,8 @@
             "vanilla-js"
         ],
         "tested_max": "7.1.0",
-        "updated_at": "2026-10-24T08:00:52Z",
-        "version": "1.1.0"
+        "updated_at": "2026-10-25T10:25:20Z",
+        "version": "1.1.1"
     },
     {
         "author": "Mindstellar",
@@ -69,7 +69,7 @@
             "general",
             "rtl"
         ],
-        "downloads": 1233,
+        "downloads": 1252,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-storefront/main/screenshot.png",
         "name": "storefront",
         "requires_min": "6.0.0",
@@ -81,7 +81,7 @@
             "vanilla-js"
         ],
         "tested_max": "7.1.0",
-        "updated_at": "2026-10-24T08:00:24Z",
-        "version": "2.2.0"
+        "updated_at": "2026-10-25T10:25:17Z",
+        "version": "2.2.1"
     }
 ]
