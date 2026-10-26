@@ -7,7 +7,7 @@
         "vehicles"
     ],
     "description_html": "<h1>Glance</h1>\n<p>A classifieds theme for comparing ads. You scan the list and read each ad in a side panel without losing your place.</p>\n<h2>Requirements</h2>\n<ul><li>Shopclass 7.0.0 or later</li><li>PHP 8.0 or later</li><li>No plugins needed.</li></ul>\n<h2>Install</h2>\n<ol><li>Download <code>glance_X.Y.Z.zip</code> from the <a href=\"https://github.com/mindstellar/theme-glance/releases\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">releases</a>.</li><li>Go to <strong>Appearance → Manage themes</strong> and upload the zip.</li><li>Click <strong>Activate</strong>.</li></ol>\n<p>Or put this folder at <code>oc-content/themes/glance</code>.</p>\n<h2>Set up</h2>\n<ol><li>Go to <strong>Appearance → Glance</strong>:<ul><li><strong>Logo</strong>: about 36 px tall. Without a logo the site name shows.</li><li><strong>Accent colour</strong>: for buttons, links and the open ad. Dark mode uses a lighter shade.</li><li><strong>List density</strong>: Comfortable or Compact.</li><li><strong>Footer note</strong>: one line under the site name. Leave it empty to hide it.</li></ul></li><li>Go to <strong>Appearance → Manage widgets</strong> to fill the <strong>Under the header</strong> and <strong>Footer</strong> areas.</li></ol>\n<h2>Features</h2>\n<ul><li>Ad list with a reading panel. Arrow keys move, Enter opens, Esc closes. Each ad keeps its own URL.</li><li>On a phone, each ad opens in a bottom sheet.</li><li>Works without JavaScript.</li><li>Saved ads are kept on the device.</li><li>Light, dark or auto colour scheme.</li><li>JSON-LD on ad pages.</li></ul>\n<h2>Customising</h2>\n<p>The theme owns its CSS in <code>css/</code>. Use a child theme or edit those files.</p>\n<h2>For developers</h2>\n<ul><li>Hooks added by the theme:<ul><li><code>glance_item_booking</code> (action): a slot for a booking widget on the ad page.</li><li><code>glance_messages_url</code> (filter): inbox link on a core without messaging. Return empty to hide it.</li><li><code>glance_unread_count</code> (filter): unread count for that link.</li></ul></li><li>Core hooks fired: <code>search_form</code>, <code>search_ads_listing_top</code>, <code>search_ads_listing_medium</code> (every 6 ads), <code>home_before_featured</code>, <code>home_after_featured</code>, <code>home_before_listings</code>, <code>home_after_listings</code>, <code>item_sidebar</code>, <code>item_meta</code>, <code>item_detail</code>, <code>item_before_related</code>, <code>item_after_related</code>, <code>item_contact_form</code>, <code>footer</code>.</li><li>Build: <code>npm install</code>, then <code>npm run build</code> for the minified CSS and JS.</li><li>A <code>vX.Y.Z</code> tag runs the release workflow and publishes <code>glance_X.Y.Z.zip</code>.</li><li>Strings use the text domain <code>glance</code>. The template is <code>languages/glance.pot</code>.</li><li>On Apache, the theme&#039;s <code>.htaccess</code> sets long caching and compression. On Nginx, add this to your <code>server</code> block:</li></ul>\n<pre><code>gzip on;\ngzip_types text/css application/javascript text/javascript image/svg+xml;\nlocation ~* ^/oc-content/themes/glance/.+\\.(css|js|woff2|svg|png|webp)$ {\n    expires 1y;\n    add_header Cache-Control &quot;public, immutable&quot;;\n}</code></pre>\n<h2>Support</h2>\n<p>Report problems at <a href=\"https://github.com/mindstellar/theme-glance/issues\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">github.com/mindstellar/theme-glance/issues</a>.</p>\n<h2>License</h2>\n<p>GPL-3.0-or-later. See <code>LICENSE</code>. The font, Schibsted Grotesk, is under the SIL Open Font Licence 1.1 (<code>fonts/OFL.txt</code>). The icons, from Lucide, are under the ISC licence.</p>",
-    "downloads": 46,
+    "downloads": 52,
     "funding": null,
     "homepage": "https://github.com/mindstellar/theme-glance",
     "icon": "https://raw.githubusercontent.com/mindstellar/theme-glance/main/screenshot.png",
@@ -35,7 +35,7 @@
     "versions": [
         {
             "changelog_html": "",
-            "downloads": 0,
+            "downloads": 3,
             "published_at": "2026-10-25T10:25:20Z",
             "requires": "7.0.0",
             "requires_php": "8.0",
@@ -47,7 +47,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 5,
+            "downloads": 6,
             "published_at": "2026-10-24T08:00:52Z",
             "requires": "7.0.0",
             "requires_php": "8.0",
@@ -59,7 +59,7 @@
         },
         {
             "changelog_html": "<h3>Fixed</h3>\n<ul><li>An ad with no price no longer sends Product data with no offer. A free ad gets an offer at 0.</li><li>Pages send og:locale.</li></ul>",
-            "downloads": 23,
+            "downloads": 24,
             "published_at": "2026-10-16T10:30:52Z",
             "requires": "7.0.0",
             "requires_php": "8.0",
@@ -71,7 +71,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 18,
+            "downloads": 19,
             "published_at": "2026-10-12T20:28:38Z",
             "requires": "7.0.0",
             "requires_php": "8.0",
