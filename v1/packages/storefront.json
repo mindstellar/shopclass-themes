@@ -7,7 +7,7 @@
         "rtl"
     ],
     "description_html": "<h1>Storefront</h1>\n<p>The default Shopclass theme for classifieds sites. It has a card-grid layout, three colour palettes, light and dark schemes, and plain JavaScript with no jQuery.</p>\n<h2>Requirements</h2>\n<ul><li>Shopclass 7.0.0 or later. Sites on an older core stay on Storefront 1.3.x.</li><li>PHP 8.0 or later</li><li>No plugins needed.</li></ul>\n<h2>Install</h2>\n<p>Shopclass bundles Storefront and activates it on a fresh install. To install it yourself:</p>\n<ol><li>Go to <strong>Appearance → Manage themes</strong>.</li><li>Find Storefront in <strong>Browse</strong>, or upload <code>storefront_X.Y.Z.zip</code> from the <a href=\"https://github.com/mindstellar/theme-storefront/releases\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">releases</a>.</li><li>Click <strong>Install</strong>, then <strong>Activate</strong>.</li></ol>\n<h2>Set up</h2>\n<ol><li>Go to <strong>Appearance → Storefront: Brand</strong>:<ul><li><strong>Site name</strong>: the wordmark shown when no logo is set.</li><li><strong>Logo</strong>: SVG, PNG or JPG. An SVG is cleaned on upload and follows the text colour, so one file works in light and dark. PNG and JPG are saved to <code>oc-content/uploads/</code>.</li><li><strong>Compact logo (optional)</strong>: a small mark for phones. The main logo shows if it is empty.</li></ul></li><li>Go to <strong>Appearance → Storefront: Settings</strong>:<ul><li><strong>Colour palette</strong>: Teal, Indigo or Violet.</li><li><strong>Colour scheme</strong>: Light, Dark or Auto (follow device).</li><li><strong>Home / Hero</strong>: <strong>Headline</strong> and <strong>Tagline</strong>, plus switches for the decorative graphic, the popular-category chips and the featured listings row.</li><li><strong>Search &amp; Location</strong>: <strong>Post &amp; edit form location</strong> (autocomplete or dropdowns), <strong>Search page location</strong> (country, region and city; region and city; or autocomplete), <strong>Search box placeholder</strong> and <strong>Default results view</strong> (gallery or list).</li><li><strong>Footer &amp; Social</strong>: <strong>Footer tagline</strong>, links for Facebook, X, Instagram, YouTube and LinkedIn, and the &quot;Powered by Shopclass&quot; credit.</li></ul></li><li>Press <strong>Save</strong>. An empty text field restores its default.</li></ol>\n<h2>Features</h2>\n<ul><li>Every palette and scheme pair meets WCAG 2.1 AA contrast.</li><li>Right-to-left locales switch the layout by themselves.</li><li>Featured listings on the home page, related listings and custom fields on the item page.</li><li>Widget zones: <code>header</code>, <code>footer</code> and <code>item_sidebar</code>.</li><li>Core draws the account, sign-in, profile, contact and credits pages inside Storefront&#039;s header and footer. The theme styles them through hooks in <code>inc/core-pages.php</code>.</li></ul>\n<h2>Customising</h2>\n<p>Settings are stored as theme preferences, so they survive updates. For deeper changes, edit the design tokens at the top of <code>css/storefront.css</code> (<code>--color-*</code>, <code>--font-*</code>, <code>--space-*</code>, <code>--radius-*</code>, <code>--shadow-*</code>) or use a child theme.</p>\n<h2>For developers</h2>\n<ul><li>Hooks fired:<p>| Hook | Where | |---|---| | <code>header</code>, <code>footer</code> | End of <code>&lt;head&gt;</code>, before <code>&lt;/body&gt;</code> | | <code>before-main</code>, <code>after-main</code> | Around the main content | | <code>search_ads_listing_top</code> | Top of home and search results | | <code>search_ads_listing_medium</code> | Every 6 search results | | <code>home_before_featured</code>, <code>home_after_featured</code> | Around the featured row | | <code>home_before_listings</code>, <code>home_after_listings</code> | Around the latest-listings row | | <code>item_meta</code>, <code>item_detail</code> | Item page body | | <code>item_before_related</code>, <code>item_after_related</code> | Around the related row | | <code>item_sidebar</code> | Item page aside | | <code>item_contact_form</code> | Inside the seller contact form |</p></li><li><code>css/</code> and <code>js/</code> run as they are. <code>npm install</code> then <code>npm run build</code> writes the <code>*.min.*</code> files and compiles <code>languages/*/theme.mo</code>. Both are gitignored.</li><li>Strings use the text domain <code>storefront</code>. Run <code>npm run i18n</code> to update <code>languages/storefront.pot</code> and <code>languages/en_US/theme.po</code>.</li><li>To work on the theme, clone it and symlink it into <code>oc-content/themes/storefront</code>.</li><li>A <code>vX.Y.Z</code> tag runs <code>.github/workflows/release.yml</code>, which builds and publishes <code>storefront_X.Y.Z.zip</code>.</li></ul>\n<h2>Support</h2>\n<p>Report problems at <a href=\"https://github.com/mindstellar/theme-storefront/issues\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">github.com/mindstellar/theme-storefront/issues</a>.</p>\n<h2>License</h2>\n<p>GPL-3.0-or-later. Copyright Navjot Tomer (Mindstellar) and contributors.</p>",
-    "downloads": 1279,
+    "downloads": 1305,
     "funding": null,
     "homepage": "https://github.com/mindstellar/theme-storefront",
     "icon": "https://raw.githubusercontent.com/mindstellar/theme-storefront/main/screenshot.png",
@@ -34,7 +34,7 @@
     "versions": [
         {
             "changelog_html": "",
-            "downloads": 7,
+            "downloads": 13,
             "published_at": "2026-10-25T10:25:17Z",
             "requires": "7.0.0",
             "requires_php": "8.0",
@@ -46,7 +46,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 15,
+            "downloads": 16,
             "published_at": "2026-10-24T08:00:24Z",
             "requires": "7.0.0",
             "requires_php": "8.0",
@@ -58,7 +58,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 21,
+            "downloads": 22,
             "published_at": "2026-10-22T11:12:28Z",
             "requires": "7.0.0",
             "requires_php": "8.0",
@@ -70,7 +70,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 43,
+            "downloads": 44,
             "published_at": "2026-10-19T11:36:44Z",
             "requires": "7.0.0",
             "requires_php": "8.0",
@@ -82,7 +82,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 23,
+            "downloads": 25,
             "published_at": "2026-10-17T05:58:48Z",
             "requires": "6.4.0",
             "requires_php": "8.0",
@@ -94,7 +94,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 22,
+            "downloads": 23,
             "published_at": "2026-10-15T18:24:36Z",
             "requires": "6.4.0",
             "requires_php": "8.0",
@@ -106,7 +106,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 108,
+            "downloads": 109,
             "published_at": "2026-10-02T16:18:37Z",
             "requires": "6.4.0",
             "requires_php": "8.0",
@@ -118,7 +118,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 34,
+            "downloads": 35,
             "published_at": "2026-10-02T05:13:49Z",
             "requires": "6.4.0",
             "requires_php": "8.0",
@@ -130,7 +130,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 32,
+            "downloads": 33,
             "published_at": "2026-10-01T13:18:19Z",
             "requires": "6.0.0",
             "requires_php": "8.0",
@@ -142,7 +142,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 65,
+            "downloads": 66,
             "published_at": "2026-09-26T04:51:01Z",
             "requires": "6.0.0",
             "requires_php": "8.0",
@@ -154,7 +154,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 41,
+            "downloads": 42,
             "published_at": "2026-09-25T12:09:57Z",
             "requires": "6.0.0",
             "requires_php": "8.0",
@@ -166,7 +166,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 37,
+            "downloads": 38,
             "published_at": "2026-09-25T08:38:18Z",
             "requires": "6.0.0",
             "requires_php": "8.0",
@@ -178,7 +178,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 37,
+            "downloads": 38,
             "published_at": "2026-09-25T07:13:13Z",
             "requires": "6.0.0",
             "requires_php": "8.0",
@@ -190,7 +190,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 39,
+            "downloads": 40,
             "published_at": "2026-09-25T07:10:50Z",
             "requires": "6.0.0",
             "requires_php": "8.0",
@@ -202,7 +202,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 168,
+            "downloads": 169,
             "published_at": "2026-08-29T03:23:44Z",
             "requires": "6.0.0",
             "requires_php": "8.0",
@@ -214,7 +214,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 130,
+            "downloads": 131,
             "published_at": "2026-08-26T09:12:23Z",
             "requires": "6.0.0",
             "requires_php": "8.0",
@@ -226,7 +226,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 106,
+            "downloads": 107,
             "published_at": "2026-08-16T13:51:08Z",
             "requires": "6.0.0",
             "requires_php": "8.0",
@@ -238,7 +238,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 148,
+            "downloads": 149,
             "published_at": "2026-08-04T02:59:27Z",
             "requires": null,
             "requires_php": null,
@@ -250,7 +250,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 103,
+            "downloads": 104,
             "published_at": "2026-08-03T16:49:25Z",
             "requires": null,
             "requires_php": null,
@@ -262,7 +262,7 @@
         },
         {
             "changelog_html": "<p>First public release of <strong>Storefront</strong> — the default public theme for <a href=\"https://github.com/mindstellar/shopclass\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">Shopclass</a>: a modern, responsive, <strong>vanilla-JS</strong> (no jQuery) classifieds front end.</p>\n<h2>Highlights</h2>\n<h3>Admin settings backend</h3>\n<p>Two pages under <strong>Appearance</strong> let operators rebrand and retune the front end without touching code (all options are stored as theme preferences and survive theme updates):</p>\n<ul><li><strong>Brand &amp; Logo</strong> — site-name wordmark; logo upload accepting <strong>SVG, PNG or JPG</strong>. SVGs are sanitized on upload (scripts and remote references stripped) and inlined so they follow the text colour — correct in both light and dark mode. Optional compact logo for small screens.</li><li><strong>Settings</strong> — colour palette, colour scheme, home hero, search &amp; location behaviour, footer &amp; social, and more (below).</li></ul>\n<h3>Design &amp; accessibility</h3>\n<ul><li><strong>Three selectable colour palettes</strong> — Teal (default), Indigo, Violet — on a warm-sand ground with deep-navy ink.</li><li><strong>Light, dark or auto</strong> colour scheme (auto follows each visitor&#039;s device).</li><li>Every palette × mode combination meets <strong>WCAG 2.1 AA</strong> contrast — including accent text in dark mode.</li><li><strong>Automatic RTL</strong> from the visitor&#039;s locale, via logical CSS properties.</li><li>Photo-forward card grid, sticky search, accessible mobile navigation.</li></ul>\n<h3>Search &amp; location</h3>\n<ul><li>Search-page location as <strong>Country + Region + City</strong>, <strong>Region + City</strong> (for single-country sites), or <strong>type-ahead autocomplete</strong>.</li><li>Post/edit form location as autocomplete or cascading dropdowns.</li><li>Location autocomplete built on core&#039;s shared combobox — no jQuery.</li></ul>\n<h3>Home &amp; content</h3>\n<ul><li>Configurable hero headline &amp; tagline; toggles for the decorative graphic, popular-category chips, and the <strong>featured (promoted) listings</strong> row.</li><li>Featured listings, related listings, custom fields, and widget zones (<code>header</code>, <code>footer</code>, <code>item_sidebar</code>).</li></ul>\n<h3>Performance</h3>\n<ul><li>JS split per surface and loaded only where used; all scripts deferred.</li><li>Minified assets ship in the release; stateless, cache-safe rendering.</li></ul>\n<h2>Install</h2>\n<p>Storefront ships bundled with <strong>Shopclass 6.0.0+</strong> and is activated on a fresh install. To install manually, unzip <code>storefront_1.0.0.zip</code> into <code>oc-content/themes/</code> and activate it under <strong>Settings → Appearance</strong>.</p>\n<p><strong>Full documentation:</strong> see the <a href=\"https://github.com/mindstellar/theme-storefront#readme\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">README</a>.</p>",
-            "downloads": 100,
+            "downloads": 101,
             "published_at": "2026-08-03T16:33:53Z",
             "requires": null,
             "requires_php": null,
