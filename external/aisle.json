@@ -1,0 +1,19 @@
+{
+  "$schema": "../schema/external.schema.json",
+  "slug": "aisle",
+  "type": "theme",
+  "source": {
+    "kind": "github-release",
+    "repo": "mindstellar/theme-aisle"
+  },
+  "asset_pattern": "^aisle_.*\\.zip$",
+  "categories": ["marketplace", "mobile-first"],
+  "tags": ["shop", "store", "cart", "products", "dark-mode"],
+  "short_description": "The Shopclass shop theme: a friendly, phone-first store front with search, deals, filters and a clear product page.",
+  "icon": "https://raw.githubusercontent.com/mindstellar/theme-aisle/main/screenshot.png",
+  "support": {
+    "issues": "https://github.com/mindstellar/theme-aisle/issues",
+    "docs": "https://github.com/mindstellar/theme-aisle#readme"
+  },
+  "license": "GPL-3.0-or-later"
+}
