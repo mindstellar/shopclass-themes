@@ -1,0 +1,52 @@
+{
+    "author": "Mindstellar",
+    "author_uri": "https://github.com/mindstellar",
+    "categories": [
+        "marketplace",
+        "mobile-first"
+    ],
+    "description_html": "<h1>Aisle</h1>\n<p>A shop theme for Shopclass. It is phone-first, with search, deals, filters and a clear product page. It reads its data from the Shopclass API and has a light and a dark scheme.</p>\n<p><img src=\"https://raw.githubusercontent.com/mindstellar/theme-aisle/v1.0.0/screenshot.png\" alt=\"Aisle home page\" loading=\"lazy\"></p>\n<h2>Requirements</h2>\n<ul><li>Shopclass 7.1.0 or later, in shop mode</li><li>PHP 8.2 or later</li><li>No required plugins. These are recommended: <code>shipping</code>, <code>tax</code>, <code>promotions</code>, <code>razorpay</code>, <code>shop-emails</code>, <code>analytics</code>, <code>digital-goods</code>.</li></ul>\n<h2>Install</h2>\n<ol><li>Download <code>aisle_X.Y.Z.zip</code> from the <a href=\"https://github.com/mindstellar/theme-aisle/releases\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">releases</a>.</li><li>Go to <strong>Appearance → Manage themes</strong> and upload the zip.</li><li>Click <strong>Activate</strong>.</li></ol>\n<p>Or copy this folder to <code>oc-content/themes/aisle/</code>. There is no build step.</p>\n<h2>Set up</h2>\n<ol><li>Go to <strong>Appearance → Aisle</strong> and set the look:<ul><li><strong>Colour scheme</strong>: follow the visitor&#039;s device, light or dark.</li><li><strong>Brand colour</strong>: Raspberry, Ocean, Forest, Marigold or Plum.</li><li><strong>Fonts</strong>: Bricolage + Figtree, Fraunces + Inter, or System fonts.</li><li><strong>Logo</strong>, <strong>Logo on dark</strong> and <strong>Logo height</strong>. Without a logo, the shop name shows.</li><li><strong>Announcement bar</strong>: one line above the header. Leave it empty to hide it.</li></ul></li><li>Under <strong>Catalogue</strong>, fill in <strong>Filters by option</strong>: one line per option, values after a colon, for example <code>Colour: Sunflower, Cherry, Navy</code>. Up to 3 options and 10 values each. A <code>Colour</code> option shows as swatches.</li><li>Under <strong>Footer</strong>, fill in <strong>Footer note</strong> and <strong>Ways to pay</strong> (tags, separated by commas).</li><li>Go to <strong>Appearance → Customise</strong> to edit the home page with a live preview. Add, hide, move and edit sections. Changes stay a draft until you press <strong>Publish</strong>. <strong>Discard</strong> drops them.</li><li>Go to <strong>Settings → Billing</strong> and turn billing on. Set the currency, bank transfer or cash on delivery (or a gateway plugin), and on the Shop tab the delivery charge, free-over amount and hold days.</li></ol>\n<p><strong>Appearance → Manage widgets</strong> does the same for the home sections, with an eye button to hide each one.</p>\n<h2>Features</h2>\n<ul><li>Home sections: Hero banner, Category row, Products (deals, newest or one category, as a grid or a row), Promise row, Banner, Featured product, Reviews, Newsletter, and the core Rich text block.</li><li>Cart drawer on every page. <code>/checkout</code> needs a signed-in shopper and JavaScript. Prices, totals and stock come from the server.</li><li>Wishlist at <code>/wishlist</code>. Signed out, it stays in the browser and joins the account at sign-in.</li><li>Product reviews with a star rating, a comment, or both. Posting needs a sign-in.</li><li>Orders at <code>user/orders</code> and <code>/orders/&lt;id&gt;</code>. Paid digital files show a Download button when the <code>digital-goods</code> plugin is on with the &quot;buyer&quot; access rule.</li><li>The newsletter form sends nowhere until a plugin sets its address with the <code>aisle_newsletter_action</code> filter.</li><li>Each page prints a JSON block (<code>#aisle-page</code>). <code>js/aisle-track.js</code> turns it and the cart into GA4-named events (<code>view_item</code>, <code>add_to_cart</code>, <code>purchase</code> and others) on <code>window.aisleTrack</code> and the <code>aisle:track</code> document event. It sends nothing itself. The <code>analytics</code> plugin listens to them.</li></ul>\n<p>Without a recommended plugin the theme still works:</p>\n<table><thead><tr><th>Plugin</th><th>Adds</th><th>Without it</th></tr></thead><tbody><tr><td><code>shipping</code></td><td>PIN code check, delivery date, Express, zones</td><td>Core&#039;s flat delivery charge</td></tr><tr><td><code>tax</code> (and <code>tax-gst</code> for India)</td><td>&quot;Includes GST&quot; note, tax rows, tax invoice</td><td>No tax shown</td></tr><tr><td><code>promotions</code></td><td>Coupon field, automatic offers</td><td>A code is ignored</td></tr><tr><td><code>razorpay</code></td><td>Card, UPI, net banking</td><td>Bank transfer and cash on delivery</td></tr><tr><td><code>digital-goods</code></td><td>Downloads on paid orders</td><td>No downloads</td></tr></tbody></table>\n<h2>Customising</h2>\n<p>The theme owns its CSS and JS in <code>css/</code> and <code>js/</code>. To change it, use a child theme or edit those files. The logo source is in <code>src/logo/</code>, with a guide to make your own in the same style. The brand colour, scheme and font come from fixed lists, so other stored values are ignored.</p>\n<h2>For developers</h2>\n<ul><li>Hooks: the theme fires <code>header</code> and <code>footer</code>, and shows the <code>footer</code> widget area.</li><li>Strings use the text domain <code>aisle</code>. Run <code>npm install</code> once, then <code>npm run i18n</code> to write <code>languages/aisle.pot</code> and <code>languages/en_US/theme.po</code>.</li><li>Tests are in <code>tests/</code>.</li><li>A <code>vX.Y.Z</code> tag runs <code>.github/workflows/release.yml</code>, which builds <code>aisle_X.Y.Z.zip</code>. The tag must match <code>Version</code> in <code>index.php</code>.</li></ul>\n<h2>Support</h2>\n<p>Report problems at <a href=\"https://github.com/mindstellar/theme-aisle/issues\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">github.com/mindstellar/theme-aisle/issues</a>.</p>\n<h2>License</h2>\n<p>GPL-3.0-or-later. Copyright Navjot Tomer (Mindstellar) and contributors.</p>",
+    "downloads": 3,
+    "funding": null,
+    "homepage": "https://github.com/mindstellar/theme-aisle",
+    "icon": "https://raw.githubusercontent.com/mindstellar/theme-aisle/main/screenshot.png",
+    "latest_version": "1.0.0",
+    "license": "GPL-3.0-or-later",
+    "modes": [
+        "shop"
+    ],
+    "name": "Aisle",
+    "requires_min": "7.1.0",
+    "screenshots": [],
+    "short_description": "The Shopclass shop theme: a friendly, phone-first store front with search, deals, filters and a clear product page.",
+    "slug": "aisle",
+    "source": "external",
+    "support": {
+        "docs": "https://github.com/mindstellar/theme-aisle#readme",
+        "issues": "https://github.com/mindstellar/theme-aisle/issues"
+    },
+    "tags": [
+        "cart",
+        "dark-mode",
+        "products",
+        "shop",
+        "store"
+    ],
+    "tested_max": null,
+    "type": "theme",
+    "updated_at": "2026-10-29T12:01:31Z",
+    "versions": [
+        {
+            "changelog_html": "<p>Ships with Shopclass 7.1 as its shop theme. Needs Shopclass 7.1.0 or newer.</p>\n<h3>New</h3>\n<ul><li>A web manifest and app icons, so a phone can add the shop to its home screen.</li><li>Page view transitions and a fly-to-cart motion; both are off under reduced motion.</li><li>Shop events (product view, add to cart, checkout steps, purchase, search) go to a page queue and a browser event for analytics plugins. The theme itself sends nothing.</li><li>The newsletter form shows a status line after sign-up and posts to the Shop emails plugin when it is on.</li><li>The theme recommends the Shop emails and Analytics plugins.</li></ul>\n<h3>Changed</h3>\n<ul><li>&quot;Your orders&quot; in the account menu is added only when core has not added it already.</li><li>The theme&#039;s styles are inlined in the page head, so the first paint waits on no stylesheet.</li><li>Pages ask the API only for the listing members they show, and the category head reuses the page&#039;s list, so home, category and product pages run about half the database statements.</li><li>The home hero is a smaller WebP with two sizes, and product photos use <code>srcset</code>.</li><li>A failed API read shows a retry line, not an empty state or a 404.</li><li>Long names, right-to-left pages, slow networks, hover, focus and tap targets are hardened.</li><li>The cart reads its line and quantity limits from the site, not from its own copy.</li><li>Product cards load the thumbnail on phones; desktop keeps the larger preview.</li><li>Home sections store site paths for images and links, so a moved or renamed site keeps them.</li></ul>\n<h3>Fixed</h3>\n<ul><li>The customiser preview turns <code>*word*</code> into an em as the page does, and an empty heading shows its default.</li><li>Link fields refuse backslashes and control characters.</li><li>The home sections migration copies the hero photo, button labels and links.</li></ul>",
+            "downloads": 3,
+            "published_at": "2026-10-29T12:01:31Z",
+            "requires": "7.1.0",
+            "requires_php": "8.2",
+            "sha256": "919c5728cb08bccce80257c8c0e73f8231d4bdcf5524e5d69f2063dc0162e57b",
+            "size": 1096392,
+            "tested": null,
+            "url": "https://github.com/mindstellar/theme-aisle/releases/download/v1.0.0/aisle_1.0.0.zip",
+            "version": "1.0.0"
+        }
+    ]
+}
