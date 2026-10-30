@@ -5,7 +5,7 @@
             "marketplace",
             "mobile-first"
         ],
-        "downloads": 3,
+        "downloads": 6,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-aisle/main/screenshot.png",
         "modes": [
             "shop"
@@ -30,7 +30,7 @@
         "categories": [
             "general"
         ],
-        "downloads": 1011,
+        "downloads": 1017,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-bender/master/screenshot.png",
         "modes": [
             "classifieds"
@@ -52,7 +52,7 @@
             "general",
             "minimal"
         ],
-        "downloads": 316,
+        "downloads": 325,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-folio/main/screenshot.png",
         "modes": [
             "classifieds"
@@ -78,7 +78,7 @@
             "general",
             "vehicles"
         ],
-        "downloads": 79,
+        "downloads": 84,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-glance/main/screenshot.png",
         "modes": [
             "classifieds"
@@ -104,7 +104,7 @@
             "general",
             "rtl"
         ],
-        "downloads": 1202,
+        "downloads": 1226,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-storefront/main/screenshot.png",
         "modes": [
             "classifieds"

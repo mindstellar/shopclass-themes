@@ -30,7 +30,7 @@
         "label": "Magazine"
     },
     {
-        "count": 0,
+        "count": 1,
         "description": "Multi-vendor / storefront layouts — seller profiles, product-style grids, shop pages.",
         "id": "marketplace",
         "label": "Marketplace"
@@ -42,7 +42,7 @@
         "label": "Minimal"
     },
     {
-        "count": 0,
+        "count": 1,
         "description": "Designed primarily for small viewports, with the desktop layout as the adaptation.",
         "id": "mobile-first",
         "label": "Mobile-first"
