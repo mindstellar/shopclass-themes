@@ -6,11 +6,11 @@
         "minimal"
     ],
     "description_html": "<h1>Folio</h1>\n<p>A small classifieds theme that puts type first. It uses native HTML elements, one hand-written stylesheet and almost no JavaScript. It is also the reference for the theme chrome contract.</p>\n<h2>Requirements</h2>\n<ul><li>Shopclass 7.0.0 or later</li><li>PHP 8.0 or later</li><li>No plugins needed.</li></ul>\n<h2>Install</h2>\n<ol><li>Go to <strong>Appearance → Manage themes</strong>.</li><li>Find Folio in <strong>Browse</strong>, or upload <code>folio_X.Y.Z.zip</code> from the <a href=\"https://github.com/mindstellar/theme-folio/releases\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">releases</a>.</li><li>Click <strong>Install</strong>, then <strong>Activate</strong>.</li></ol>\n<h2>Set up</h2>\n<ol><li>Go to <strong>Appearance → Folio</strong>:<ul><li><strong>Logo</strong>: shown in the masthead instead of the site name. A transparent PNG fits best.</li><li><strong>Brand colour</strong>: replaces the navy of the masthead and footer.</li><li><strong>Footer note</strong>: one line above the copyright. Leave it empty to omit it.</li></ul></li><li>Go to <strong>Appearance → Manage widgets</strong> to fill the <strong>Masthead</strong> and <strong>Colophon</strong> areas.</li></ol>\n<h2>Features</h2>\n<ul><li><code>&lt;dialog&gt;</code> for the seller contact form, <code>&lt;details&gt;</code> for filters, <code>&lt;search&gt;</code> around the search fields.</li><li>Light and dark come from <code>color-scheme</code> and <code>light-dark()</code>. Right-to-left comes from logical properties.</li><li>One stylesheet, <code>style.css</code>, with design tokens as CSS variables at the top.</li><li>A small inline script in the footer. Links work without it.</li><li>No build step. What is committed is what ships.</li><li>Core draws the account and sign-in pages inside Folio&#039;s masthead and footer. Folio ships none of those views, and <code>style.css</code> styles core&#039;s markup. To change a page, add its file to the theme.</li></ul>\n<h2>Customising</h2>\n<p>Edit the variables at the top of <code>style.css</code> to change the palette or type scale. Use a child theme to keep changes through updates.</p>\n<h2>For developers</h2>\n<ul><li>Folio declares its header and footer with <code>osc_add_theme_support(&#039;chrome&#039;, ...)</code> in <code>functions.php</code>. See the <a href=\"https://mindstellar.com/docs/developers/theme-chrome/\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">theme chrome docs</a> and the <a href=\"https://mindstellar.com/docs/developers/account-pages/\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">account pages docs</a>.</li><li>Hooks the theme fires: <code>header</code> (through <code>osc_head()</code>), <code>footer</code>, <code>item_detail</code> and <code>item_contact_form</code>. Core fires the account and form hooks inside Folio&#039;s chrome.</li><li>Strings use the text domain <code>folio</code>. Run <code>node bin/i18n.mjs</code> to update <code>languages/folio.pot</code>. It needs only Node. No translations ship yet.</li><li>To work on the theme, clone it and symlink it into <code>oc-content/themes/folio</code>.</li><li>A <code>vX.Y.Z</code> tag runs <code>.github/workflows/release.yml</code>, which publishes <code>folio_X.Y.Z.zip</code>.</li></ul>\n<h2>Support</h2>\n<p>Report problems at <a href=\"https://github.com/mindstellar/theme-folio/issues\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">github.com/mindstellar/theme-folio/issues</a>.</p>\n<h2>License</h2>\n<p>GPL-3.0-or-later. Copyright Navjot Tomer (Mindstellar) and contributors.</p>",
-    "downloads": 325,
+    "downloads": 344,
     "funding": null,
     "homepage": "https://github.com/mindstellar/theme-folio",
     "icon": "https://raw.githubusercontent.com/mindstellar/theme-folio/main/screenshot.png",
-    "latest_version": "0.6.1",
+    "latest_version": "0.7.0",
     "license": "GPL-3.0-or-later",
     "modes": [
         "classifieds"
@@ -33,11 +33,23 @@
     ],
     "tested_max": "7.1.0",
     "type": "theme",
-    "updated_at": "2026-10-25T10:25:14Z",
+    "updated_at": "2026-10-30T17:30:59Z",
     "versions": [
         {
             "changelog_html": "",
-            "downloads": 16,
+            "downloads": 1,
+            "published_at": "2026-10-30T17:30:59Z",
+            "requires": "7.0.0",
+            "requires_php": "8.0",
+            "sha256": "b60d461ba265708429b7b945bc2351a37656e80e9ddf499d7bbc6dbbb0afba3a",
+            "size": 169595,
+            "tested": "7.1.0",
+            "url": "https://github.com/mindstellar/theme-folio/releases/download/v0.7.0/folio_0.7.0.zip",
+            "version": "0.7.0"
+        },
+        {
+            "changelog_html": "",
+            "downloads": 19,
             "published_at": "2026-10-25T10:25:14Z",
             "requires": "7.0.0",
             "requires_php": "8.0",
@@ -49,7 +61,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 14,
+            "downloads": 16,
             "published_at": "2026-10-24T08:00:38Z",
             "requires": "7.0.0",
             "requires_php": "8.0",
@@ -61,7 +73,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 21,
+            "downloads": 23,
             "published_at": "2026-10-19T11:36:51Z",
             "requires": "7.0.0",
             "requires_php": "8.0",
@@ -73,7 +85,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 53,
+            "downloads": 55,
             "published_at": "2026-09-26T18:33:04Z",
             "requires": "6.3.0",
             "requires_php": "8.0",
@@ -85,7 +97,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 40,
+            "downloads": 43,
             "published_at": "2026-09-26T04:51:07Z",
             "requires": "6.3.0",
             "requires_php": "8.0",
@@ -97,7 +109,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 65,
+            "downloads": 67,
             "published_at": "2026-09-17T04:28:51Z",
             "requires": "6.3.0",
             "requires_php": "8.0",
@@ -109,7 +121,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 56,
+            "downloads": 58,
             "published_at": "2026-09-15T05:40:02Z",
             "requires": "6.3.0",
             "requires_php": "8.0",
@@ -121,7 +133,7 @@
         },
         {
             "changelog_html": "",
-            "downloads": 60,
+            "downloads": 62,
             "published_at": "2026-09-04T09:29:58Z",
             "requires": "6.3.0",
             "requires_php": "8.0",
