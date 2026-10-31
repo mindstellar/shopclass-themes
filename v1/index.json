@@ -5,11 +5,8 @@
             "marketplace",
             "mobile-first"
         ],
-        "downloads": 8,
+        "downloads": 11,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-aisle/main/screenshot.png",
-        "modes": [
-            "shop"
-        ],
         "name": "Aisle",
         "requires_min": "7.1.0",
         "short_description": "The Shopclass shop theme: a friendly, phone-first store front with search, deals, filters and a clear product page.",
@@ -30,11 +27,8 @@
         "categories": [
             "general"
         ],
-        "downloads": 1022,
+        "downloads": 1027,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-bender/master/screenshot.png",
-        "modes": [
-            "classifieds"
-        ],
         "name": "bender",
         "requires_min": "6.0.0",
         "short_description": "The legacy default Shopclass theme, replaced by Storefront in 6.0.0. Maintained for existing installs.",
@@ -52,11 +46,8 @@
             "general",
             "minimal"
         ],
-        "downloads": 344,
+        "downloads": 356,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-folio/main/screenshot.png",
-        "modes": [
-            "classifieds"
-        ],
         "name": "folio",
         "requires_min": "6.3.0",
         "short_description": "A typography-first Shopclass theme built on native HTML5 elements — one hand-written stylesheet, eight lines of JavaScript, no build step.",
@@ -78,11 +69,8 @@
             "general",
             "vehicles"
         ],
-        "downloads": 94,
+        "downloads": 101,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-glance/main/screenshot.png",
-        "modes": [
-            "classifieds"
-        ],
         "name": "glance",
         "requires_min": "7.0.0",
         "short_description": "A classifieds theme for comparing ads: read each ad in a side panel without losing your place in the list.",
@@ -104,11 +92,8 @@
             "general",
             "rtl"
         ],
-        "downloads": 1119,
+        "downloads": 1147,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-storefront/main/screenshot.png",
-        "modes": [
-            "classifieds"
-        ],
         "name": "storefront",
         "requires_min": "6.0.0",
         "short_description": "The bundled default Shopclass theme since 6.0.0 — a modern, responsive, vanilla-JS classifieds front end with automatic RTL and WCAG 2.1 AA contrast.",
