@@ -120,8 +120,22 @@ jobs:
             echo "::notice::package-ci/build-catalog.php is not published by ${CORE_REPO} yet (docs/MARKET.md §7) — catalog build skipped this run, nothing published. This is expected until core ships it and is not a failure."
           fi
 
+      # The release lists and asset bytes from the last run. With them an unchanged
+      # list comes back as a 304, and a failed fetch falls back to the saved list.
+      - name: Restore the build cache
+        if: steps.builder.outputs.present == 'true'
+        uses: actions/cache@v5
+        with:
+          path: catalog-out/.build-cache
+          key: catalog-build-cache-${{ github.run_id }}
+          restore-keys: catalog-build-cache-
+
+      # Signed in, GitHub allows 1,000 calls an hour for this repo; signed out, 60
+      # an hour shared with every job on the same runner address.
       - name: Build catalog (package-ci/build-catalog.php)
         if: steps.builder.outputs.present == 'true'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
           php package-ci/build-catalog.php \
             --type="${{ steps.type.outputs.type }}" \
