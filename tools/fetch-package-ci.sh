@@ -16,7 +16,7 @@
 # registries are driven identically. Env overrides remain supported:
 #   SHOPCLASS_CORE_REPO        owner/name (default mindstellar/shopclass)
 #   SHOPCLASS_CORE_GIT_URL     git remote for the fallback clone
-#   SHOPCLASS_CORE_REF         git ref for the fallback clone
+#   SHOPCLASS_CORE_REF         release to take the bundle from, and git ref for the fallback clone
 #   SHOPCLASS_CORE_LOCAL_PATH  skip network, assemble from an existing checkout
 #   GITHUB_TOKEN                raises the GitHub API rate limit; never required
 set -euo pipefail
@@ -94,8 +94,10 @@ try_release_asset() {
   esac
 
   local asset_url
-  asset_url="$(printf '%s' "${body}" | jq -r --arg name "${ASSET_NAME}" '
+  # With --ref the bundle comes from that release; without it, from the newest one.
+  asset_url="$(printf '%s' "${body}" | jq -r --arg name "${ASSET_NAME}" --arg ref "${SHOPCLASS_CORE_REF:-}" '
     map(select(.draft == false))
+    | if $ref != "" then map(select(.tag_name == $ref)) else . end
     | map(select(((.assets // []) | map(.name) | index($name)) != null))
     | .[0].assets[]?
     | select(.name == $name)

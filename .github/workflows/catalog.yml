@@ -108,7 +108,13 @@ jobs:
       # bundle; see the header of this script for what happens while core has
       # not published it yet.
       - name: Fetch package-ci harness
-        run: tools/fetch-package-ci.sh --out=package-ci --core-repo="${CORE_REPO}"
+        # The core version found above, not the release published last: a 7.0.x patch
+        # published after a 7.1 beta would otherwise bring the older builder.
+        # 0.0.0 means no core release was found; the newest bundle is then the best guess.
+        run: |
+          REF="${{ steps.core-version.outputs.version }}"
+          [ "$REF" = "0.0.0" ] && REF=""
+          tools/fetch-package-ci.sh --out=package-ci --core-repo="${CORE_REPO}" ${REF:+--ref="$REF"}
 
       - name: Check whether build-catalog.php has shipped yet
         id: builder
