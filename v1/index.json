@@ -5,7 +5,7 @@
             "marketplace",
             "mobile-first"
         ],
-        "downloads": 19,
+        "downloads": 26,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-aisle/main/screenshot.png",
         "modes": [
             "shop"
@@ -22,15 +22,15 @@
             "store"
         ],
         "tested_max": null,
-        "updated_at": "2026-11-02T09:28:55Z",
-        "version": "1.2.0"
+        "updated_at": "2026-11-03T05:15:59Z",
+        "version": "1.3.0"
     },
     {
         "author": "Shopclass",
         "categories": [
             "general"
         ],
-        "downloads": 1042,
+        "downloads": 1052,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-bender/master/screenshot.png",
         "modes": [
             "classifieds"
@@ -43,8 +43,8 @@
             "legacy"
         ],
         "tested_max": "6.4",
-        "updated_at": "2026-09-25T12:09:52Z",
-        "version": "3.3.3"
+        "updated_at": "2026-11-03T04:41:01Z",
+        "version": "3.3.4"
     },
     {
         "author": "Mindstellar",
@@ -52,7 +52,7 @@
             "general",
             "minimal"
         ],
-        "downloads": 385,
+        "downloads": 395,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-folio/main/screenshot.png",
         "modes": [
             "classifieds"
@@ -68,8 +68,8 @@
             "typography"
         ],
         "tested_max": "7.1.0",
-        "updated_at": "2026-10-30T17:30:59Z",
-        "version": "0.7.0"
+        "updated_at": "2026-11-03T05:35:45Z",
+        "version": "0.7.1"
     },
     {
         "author": "Mindstellar",
@@ -78,7 +78,7 @@
             "general",
             "vehicles"
         ],
-        "downloads": 118,
+        "downloads": 126,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-glance/main/screenshot.png",
         "modes": [
             "classifieds"
@@ -94,8 +94,8 @@
             "vanilla-js"
         ],
         "tested_max": "7.1.0",
-        "updated_at": "2026-10-30T17:31:07Z",
-        "version": "1.2.0"
+        "updated_at": "2026-11-03T05:35:51Z",
+        "version": "1.2.1"
     },
     {
         "author": "Mindstellar",
@@ -104,7 +104,7 @@
             "general",
             "rtl"
         ],
-        "downloads": 1228,
+        "downloads": 1137,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-storefront/main/screenshot.png",
         "modes": [
             "classifieds"
@@ -119,7 +119,7 @@
             "vanilla-js"
         ],
         "tested_max": "7.1.0",
-        "updated_at": "2026-10-30T17:30:55Z",
-        "version": "2.3.0"
+        "updated_at": "2026-11-03T05:35:49Z",
+        "version": "2.4.0"
     }
 ]
