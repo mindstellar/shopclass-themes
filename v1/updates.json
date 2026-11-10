@@ -1,7 +1,7 @@
 {
     "aisle": [
         {
-            "downloads": 34,
+            "downloads": 35,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "75c19831de8c5b810c23e3e764aed2050f3f3ed79db88768c10507b388b9f953",
@@ -43,7 +43,7 @@
     ],
     "bender": [
         {
-            "downloads": 7,
+            "downloads": 8,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "40263896bc143e6c8525cc099771e493f10cf68878985183ef6b783a178cb00b",
@@ -105,7 +105,7 @@
     ],
     "folio": [
         {
-            "downloads": 9,
+            "downloads": 10,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "5889e905b8f7921ea79f43509a546f5751cf1d4c4576fb6ccf4bbaa29b979622",
@@ -207,7 +207,7 @@
     ],
     "glance": [
         {
-            "downloads": 8,
+            "downloads": 9,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "702ef3a1d706efcbb5bdb291b65c2405c5efad929fdbf4acd480ad45d5425beb",
@@ -269,7 +269,7 @@
     ],
     "storefront": [
         {
-            "downloads": 35,
+            "downloads": 36,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "ce1846e9a110279e74b264f28b117254e068d02a005161ccd9cb0c24c4142353",
