@@ -5,11 +5,12 @@
             "marketplace",
             "mobile-first"
         ],
-        "downloads": 61,
+        "downloads": 62,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-aisle/main/screenshot.png",
         "modes": [
             "shop"
         ],
+        "modes_declared": true,
         "name": "Aisle",
         "requires_min": "7.1.0",
         "short_description": "The Shopclass shop theme: a friendly, phone-first store front with search, deals, filters and a clear product page.",
@@ -35,6 +36,7 @@
         "modes": [
             "classifieds"
         ],
+        "modes_declared": false,
         "name": "bender",
         "requires_min": "6.0.0",
         "short_description": "The legacy default Shopclass theme, replaced by Storefront in 6.0.0. Maintained for existing installs.",
@@ -57,6 +59,7 @@
         "modes": [
             "classifieds"
         ],
+        "modes_declared": true,
         "name": "folio",
         "requires_min": "6.3.0",
         "short_description": "A typography-first Shopclass theme built on native HTML5 elements — one hand-written stylesheet, eight lines of JavaScript, no build step.",
@@ -83,6 +86,7 @@
         "modes": [
             "classifieds"
         ],
+        "modes_declared": true,
         "name": "glance",
         "requires_min": "7.0.0",
         "short_description": "A classifieds theme for comparing ads: read each ad in a side panel without losing your place in the list.",
@@ -104,11 +108,12 @@
             "general",
             "rtl"
         ],
-        "downloads": 1181,
+        "downloads": 1052,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-storefront/main/screenshot.png",
         "modes": [
             "classifieds"
         ],
+        "modes_declared": true,
         "name": "storefront",
         "requires_min": "6.0.0",
         "short_description": "The bundled default Shopclass theme since 6.0.0 — a modern, responsive, vanilla-JS classifieds front end with automatic RTL and WCAG 2.1 AA contrast.",
@@ -119,7 +124,7 @@
             "vanilla-js"
         ],
         "tested_max": "7.1.0",
-        "updated_at": "2026-11-03T05:35:49Z",
-        "version": "2.4.0"
+        "updated_at": "2026-11-12T04:52:14Z",
+        "version": "2.5.0"
     }
 ]

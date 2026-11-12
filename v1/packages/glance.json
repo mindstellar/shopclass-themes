@@ -16,6 +16,7 @@
     "modes": [
         "classifieds"
     ],
+    "modes_declared": true,
     "name": "glance",
     "requires_min": "7.0.0",
     "screenshots": [],
