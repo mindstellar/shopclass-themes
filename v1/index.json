@@ -108,7 +108,7 @@
             "general",
             "rtl"
         ],
-        "downloads": 1052,
+        "downloads": 906,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-storefront/main/screenshot.png",
         "modes": [
             "classifieds"
@@ -124,7 +124,7 @@
             "vanilla-js"
         ],
         "tested_max": "7.1.0",
-        "updated_at": "2026-11-12T04:52:14Z",
-        "version": "2.5.0"
+        "updated_at": "2026-11-12T16:34:08Z",
+        "version": "2.6.0"
     }
 ]
