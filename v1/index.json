@@ -5,7 +5,7 @@
             "marketplace",
             "mobile-first"
         ],
-        "downloads": 62,
+        "downloads": 63,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-aisle/main/screenshot.png",
         "modes": [
             "shop"
@@ -31,7 +31,7 @@
         "categories": [
             "general"
         ],
-        "downloads": 1060,
+        "downloads": 1061,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-bender/master/screenshot.png",
         "modes": [
             "classifieds"
@@ -108,7 +108,7 @@
             "general",
             "rtl"
         ],
-        "downloads": 906,
+        "downloads": 946,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-storefront/main/screenshot.png",
         "modes": [
             "classifieds"
