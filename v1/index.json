@@ -5,7 +5,7 @@
             "marketplace",
             "mobile-first"
         ],
-        "downloads": 71,
+        "downloads": 73,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-aisle/main/screenshot.png",
         "modes": [
             "shop"
@@ -23,15 +23,15 @@
             "store"
         ],
         "tested_max": null,
-        "updated_at": "2026-11-15T08:37:23Z",
-        "version": "1.3.1"
+        "updated_at": "2026-11-18T12:27:26Z",
+        "version": "1.4.0"
     },
     {
         "author": "Shopclass",
         "categories": [
             "general"
         ],
-        "downloads": 1064,
+        "downloads": 1066,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-bender/master/screenshot.png",
         "modes": [
             "classifieds"
@@ -54,7 +54,7 @@
             "general",
             "minimal"
         ],
-        "downloads": 406,
+        "downloads": 409,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-folio/main/screenshot.png",
         "modes": [
             "classifieds"
@@ -71,8 +71,8 @@
             "typography"
         ],
         "tested_max": "7.1.0",
-        "updated_at": "2026-11-03T05:35:45Z",
-        "version": "0.7.1"
+        "updated_at": "2026-11-18T12:27:22Z",
+        "version": "0.8.0"
     },
     {
         "author": "Mindstellar",
@@ -81,7 +81,7 @@
             "general",
             "vehicles"
         ],
-        "downloads": 136,
+        "downloads": 139,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-glance/main/screenshot.png",
         "modes": [
             "classifieds"
@@ -98,8 +98,8 @@
             "vanilla-js"
         ],
         "tested_max": "7.1.0",
-        "updated_at": "2026-11-03T05:35:51Z",
-        "version": "1.2.1"
+        "updated_at": "2026-11-18T12:27:39Z",
+        "version": "1.3.0"
     },
     {
         "author": "Mindstellar",
@@ -108,7 +108,7 @@
             "general",
             "rtl"
         ],
-        "downloads": 1011,
+        "downloads": 969,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-storefront/main/screenshot.png",
         "modes": [
             "classifieds"
@@ -124,7 +124,7 @@
             "vanilla-js"
         ],
         "tested_max": "7.1.0",
-        "updated_at": "2026-11-15T08:37:30Z",
-        "version": "2.6.1"
+        "updated_at": "2026-11-18T12:27:20Z",
+        "version": "2.7.0"
     }
 ]
