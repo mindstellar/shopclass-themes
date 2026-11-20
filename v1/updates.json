@@ -1,7 +1,17 @@
 {
     "aisle": [
         {
-            "downloads": 2,
+            "downloads": 5,
+            "requires": "7.1.0",
+            "requires_php": "8.2",
+            "sha256": "10441ec28f312b72b83aaf31fc69076c4928b209933b9cdb4c31f51f9bd79519",
+            "size": 1108825,
+            "tested": null,
+            "url": "https://github.com/mindstellar/theme-aisle/releases/download/v1.4.1/aisle_1.4.1.zip",
+            "version": "1.4.1"
+        },
+        {
+            "downloads": 5,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "303e2154b551946afe3cd4f04d161dc23aff02738d72a36dfbb76076e80d2267",
@@ -63,7 +73,7 @@
     ],
     "bender": [
         {
-            "downloads": 11,
+            "downloads": 12,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "40263896bc143e6c8525cc099771e493f10cf68878985183ef6b783a178cb00b",
@@ -125,7 +135,7 @@
     ],
     "folio": [
         {
-            "downloads": 1,
+            "downloads": 4,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "f0879405815228a5a00ad69e0ee7af4666ba249b50d58172f54f7c07731a8943",
@@ -237,7 +247,7 @@
     ],
     "glance": [
         {
-            "downloads": 1,
+            "downloads": 4,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "ae522178af5f9113d1be5f22104728cd203449a567bca6ca5244c69dd24f9510",
@@ -309,7 +319,7 @@
     ],
     "storefront": [
         {
-            "downloads": 3,
+            "downloads": 14,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "cf45b6cd94d5bf5619512cd131706fdc3004c6da91d640ead0b4945756af95c5",
