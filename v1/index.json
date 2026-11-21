@@ -5,7 +5,7 @@
             "marketplace",
             "mobile-first"
         ],
-        "downloads": 73,
+        "downloads": 86,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-aisle/main/screenshot.png",
         "modes": [
             "shop"
@@ -23,15 +23,15 @@
             "store"
         ],
         "tested_max": null,
-        "updated_at": "2026-11-18T12:27:26Z",
-        "version": "1.4.0"
+        "updated_at": "2026-11-19T11:59:07Z",
+        "version": "1.4.1"
     },
     {
         "author": "Shopclass",
         "categories": [
             "general"
         ],
-        "downloads": 1066,
+        "downloads": 1071,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-bender/master/screenshot.png",
         "modes": [
             "classifieds"
@@ -54,7 +54,7 @@
             "general",
             "minimal"
         ],
-        "downloads": 409,
+        "downloads": 416,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-folio/main/screenshot.png",
         "modes": [
             "classifieds"
@@ -81,7 +81,7 @@
             "general",
             "vehicles"
         ],
-        "downloads": 139,
+        "downloads": 147,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-glance/main/screenshot.png",
         "modes": [
             "classifieds"
@@ -108,7 +108,7 @@
             "general",
             "rtl"
         ],
-        "downloads": 969,
+        "downloads": 990,
         "icon": "https://raw.githubusercontent.com/mindstellar/theme-storefront/main/screenshot.png",
         "modes": [
             "classifieds"

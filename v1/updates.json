@@ -1,7 +1,7 @@
 {
     "aisle": [
         {
-            "downloads": 5,
+            "downloads": 10,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "10441ec28f312b72b83aaf31fc69076c4928b209933b9cdb4c31f51f9bd79519",
@@ -73,7 +73,7 @@
     ],
     "bender": [
         {
-            "downloads": 12,
+            "downloads": 15,
             "requires": "6.0.0",
             "requires_php": "8.0",
             "sha256": "40263896bc143e6c8525cc099771e493f10cf68878985183ef6b783a178cb00b",
@@ -123,7 +123,7 @@
             "version": "3.3.0"
         },
         {
-            "downloads": 676,
+            "downloads": 677,
             "requires": null,
             "requires_php": null,
             "sha256": "3ff152c0ddee748a14da3f5e1079d1a39dfb6dec9b57d49020a7451a66fd8601",
@@ -135,7 +135,7 @@
     ],
     "folio": [
         {
-            "downloads": 4,
+            "downloads": 8,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "f0879405815228a5a00ad69e0ee7af4666ba249b50d58172f54f7c07731a8943",
@@ -247,7 +247,7 @@
     ],
     "glance": [
         {
-            "downloads": 4,
+            "downloads": 9,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "ae522178af5f9113d1be5f22104728cd203449a567bca6ca5244c69dd24f9510",
@@ -319,7 +319,7 @@
     ],
     "storefront": [
         {
-            "downloads": 14,
+            "downloads": 22,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "cf45b6cd94d5bf5619512cd131706fdc3004c6da91d640ead0b4945756af95c5",
@@ -329,7 +329,7 @@
             "version": "2.7.0"
         },
         {
-            "downloads": 89,
+            "downloads": 90,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "fc9c9fb2e69c7fd15ccd8642cc7bc3534ec851ab18a3c4f12cd5c945563969ca",
@@ -439,7 +439,7 @@
             "version": "2.1.0"
         },
         {
-            "downloads": 39,
+            "downloads": 40,
             "requires": "6.4.0",
             "requires_php": "8.0",
             "sha256": "2a49d057c036ed84d7b344f087ffd6c367e90dcdde078c9e58b785711e060837",
