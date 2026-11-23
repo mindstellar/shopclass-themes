@@ -1,7 +1,7 @@
 {
     "aisle": [
         {
-            "downloads": 10,
+            "downloads": 11,
             "requires": "7.1.0",
             "requires_php": "8.2",
             "sha256": "10441ec28f312b72b83aaf31fc69076c4928b209933b9cdb4c31f51f9bd79519",
@@ -123,7 +123,7 @@
             "version": "3.3.0"
         },
         {
-            "downloads": 677,
+            "downloads": 679,
             "requires": null,
             "requires_php": null,
             "sha256": "3ff152c0ddee748a14da3f5e1079d1a39dfb6dec9b57d49020a7451a66fd8601",
@@ -319,7 +319,7 @@
     ],
     "storefront": [
         {
-            "downloads": 22,
+            "downloads": 26,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "cf45b6cd94d5bf5619512cd131706fdc3004c6da91d640ead0b4945756af95c5",
@@ -359,7 +359,7 @@
             "version": "2.5.0"
         },
         {
-            "downloads": 118,
+            "downloads": 135,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "ce1846e9a110279e74b264f28b117254e068d02a005161ccd9cb0c24c4142353",
