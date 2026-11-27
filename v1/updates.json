@@ -319,7 +319,7 @@
     ],
     "storefront": [
         {
-            "downloads": 61,
+            "downloads": 62,
             "requires": "7.0.0",
             "requires_php": "8.0",
             "sha256": "cf45b6cd94d5bf5619512cd131706fdc3004c6da91d640ead0b4945756af95c5",
